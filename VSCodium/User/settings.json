@@ -1,0 +1,54 @@
+{
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "editor.fontFamily": "'Fira Code Retina', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.inlineSuggest.enabled": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "glassit-linux.opacity": 95,
+    "window.menuBarVisibility": "toggle",
+    "security.workspace.trust.enabled": false,
+    "workbench.startupEditor": "none",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "editor.wordWrap": "on",
+    "latex-workshop.latex.autoBuild.run": "never",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "cSpell.language": "en,ru",
+    "cSpell.userWords": [
+        "Jelena",
+        "Nuffield",
+        "Respondi"
+    ],
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false,
+        "tsv": false,
+        "latex": false,
+        "r": true
+    },
+    "json.maxItemsComputed": 20000,
+    "grammarly.domain": "academic",
+    "grammarly.hideUnavailablePremiumAlerts": true,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "latex-workshop.latex.build.forceRecipeUsage": false,
+    "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
+    "explorer.confirmDelete": false,
+    "files.associations": {
+        "*.json": "jsonc"
+    },
+    "quarto.mathjax.theme": "dark",
+    "window.zoomLevel": 1,
+    "latex-workshop.view.pdf.external.synctex.command": "okular",
+    "latex-workshop.view.pdf.external.viewer.args": [
+        "--unique",
+        "%PDF%"
+    ],
+    "latex-workshop.view.pdf.external.synctex.args": [
+        "%PDF%#src:%LINE%%TEX%",
+        "--unique"
+    ],
+    "latex-workshop.view.pdf.external.viewer.command": "okular",
+    "debug.console.fontSize": 13,
+    "markdown.preview.fontSize": 13,
+    "terminal.integrated.fontSize": 13
+}

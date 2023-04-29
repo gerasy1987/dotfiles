@@ -1,0 +1,64 @@
+{
+    "editor.fontFamily": "'Fira Code Retina', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.inlineSuggest.enabled": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "glassit-linux.opacity": 95,
+    "window.menuBarVisibility": "toggle",
+    "security.workspace.trust.enabled": false,
+    "workbench.startupEditor": "none",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "editor.wordWrap": "on",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.autoBuild.run": "never",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "cSpell.language": "en,ru",
+    "cSpell.userWords": [
+        "Endline",
+        "excludability",
+        "Jelena",
+        "Respondi",
+        "sociodemographic"
+    ],
+    "github.copilot.enable": {
+        "quarto": false,
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false,
+        "tsv": false,
+        "latex": false,
+        "r": true,
+        "rmd": true
+    },
+    "json.maxItemsComputed": 20000,
+    "grammarly.domain": "academic",
+    "grammarly.hideUnavailablePremiumAlerts": true,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "latex-workshop.latex.build.forceRecipeUsage": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "explorer.confirmDelete": false,
+    "files.associations": {
+        "*.json": "jsonc"
+    },
+    "quarto.mathjax.theme": "dark",
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "editor.tabSize": 3,
+    "extensions.autoUpdate": "onlyEnabledExtensions",
+    "github.copilot.advanced": {},
+    "terminal.integrated.defaultProfile.linux": "fish",
+    "terminal.external.linuxExec": "kitty",
+    "r.plot.useHttpgd": true,
+   "r.bracketedPaste": true,
+    "window.zoomLevel": 1,
+    "editor.minimap.enabled": false,
+    "r.lsp.diagnostics": false,
+    "cSpell.enableFiletypes": [
+        "!r"
+    ],
+    "editor.indentSize": "tabSize",
+   "editor.detectIndentation": false,
+   "prettier.tabWidth": 3,
+   "[python]": {
+      "editor.formatOnType": true
+   }
+}

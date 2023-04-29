@@ -1,0 +1,104 @@
+format = """
+\\[ $username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$buf\
+$cmake\
+$cobol\
+$container\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$haskell\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo\\] \
+$cmd_duration\
+$jobs\
+$battery\
+$time\
+$status\
+$shell\
+$line_break\
+$character"""
+
+# $line_break\
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+
+[username]
+style_user = "bold red"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "@[$hostname](bold yellow):"
+# trim_at = ".companyname.com"
+disabled = false
+
+[character]
+success_symbol = "[✔]()" 
+error_symbol = "[❌]()"
+
+[cmd_duration]
+min_time = 1000
+format = "took [$duration](bold)"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = false
+
+[rlang]
+format = "via [📐 $version](blue bold) "
