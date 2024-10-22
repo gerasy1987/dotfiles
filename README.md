@@ -1,6 +1,6 @@
-# Collection of valuable resources
+# `dotfiles` and useful resources
 
-Collection of valuable resources for improving your workflow, mainly for using Visual Studio Code (VS Code) and RStudio to work with R, Python, Git and Quarto. Below are categorized links with brief descriptions to help you get started.
+Repository with useful configs and a curated collection of resources to enhance your productivity and workflow, focusing on Visual Studio Code (VS Code) and RStudio. It includes tools and guides for working with R, Python, Git, and Quarto.
 
 ## VS Code Resources
 
@@ -42,14 +42,16 @@ Collection of valuable resources for improving your workflow, mainly for using V
 
 - **[GitHub Copilot in RStudio](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html):** Discover how to use GitHub Copilot in RStudio for AI-powered code suggestions, available for free to educators through [GitHub for Education](https://docs.github.com/en/copilot/managing-copilot/managing-copilot-as-an-individual-subscriber/managing-your-copilot-subscription/getting-free-access-to-copilot-as-a-student-teacher-or-maintainer).
 
+- [`TinyTeX` package in R](https://yihui.org/tinytex/) will solve all your LaTeX troubles. Just make sure to install it with `bundle = "TinyTeX-2"` option to make sure you install all packages.
+
 ## Quality of Life Improvements
 
-- **USE WHATEVER WINDOW TILING SYSTEM THAT IS AVAILABLE TO YOU:**
+- **Reduce need to drag and stretch windows by using tiling window managers:**
   - [Aerospace](https://github.com/nikitabobko/AeroSpace) or [Yabai](https://github.com/koekeishiya/yabai) on MacOS
   - [komorebi](https://github.com/LGUG2Z/komorebi) on Windows
   - Whatever you want in Linux (i3, bspwn, Awesome, qtile...)
 
-- **Learn basic terminal commands (`cd`, `ls`, `mkdir`, `mv`, `nano`, `sudo`, ...)**
+- **Learn basic terminal commands (`cd`, `ls`, `mkdir`, `mv`, `nano`, `sudo`, etc.)**
   - [`fish` shell](https://fishshell.com/) will make your life easier with autocompletion and easy history search with `Ctrl`+`R`
   - [`starship` terminal prompt](https://starship.rs/) will make your prompt be more useful too
 
@@ -58,14 +60,22 @@ Collection of valuable resources for improving your workflow, mainly for using V
   - **[Commander One](https://mac.eltima.com/file-manager.html):** A dual-pane file manager for macOS with advanced features like FTP client and file compression.
   - **[Krusader](https://krusader.org/):** An advanced twin-panel file manager for KDE and other desktops in the Unix world, providing a wide range of features.
 
-## Other
-
-- **Everything is ![Awesome](https://awesome.re/badge.svg):**
-    
-    - **[Awesome Quarto](https://github.com/mcanouil/awesome-quarto)** 
-    - **[Awesome VS Code](https://github.com/viatsko/awesome-vscode)** 
-    - **[Awesome Git](https://github.com/dictcp/awesome-git)**
-    - [$\infty$ awesomeness](https://github.com/sindresorhus/awesome)
-
-
 - **[Quarto Visual Editor](https://quarto.org/docs/visual-editor/):** A user-friendly visual editor for Quarto, simplifying document creation and editing.
+
+- **[Package Managers](https://brew.sh/):** Use tools like Homebrew, apt, or pacman to efficiently install and manage software on your system.
+
+- **[Multi-Cursor Editing](https://code.visualstudio.com/docs/editor/codebasics#_multi-cursor-modifications):** Master the use of multi-cursor features in editors like RStudio and VS Code to enhance your coding productivity.
+
+- **[Fonts with Ligatures](https://github.com/tonsky/FiraCode):** Enhance code readability with fonts like Fira Code that support ligatures, providing a more visually appealing coding experience.
+
+## **Everything is ![Awesome](https://awesome.re/badge.svg)**
+    
+- **[Awesome Quarto](https://github.com/mcanouil/awesome-quarto)** 
+
+- **[Awesome VS Code](https://github.com/viatsko/awesome-vscode)** 
+
+- **[Awesome Git](https://github.com/dictcp/awesome-git)**
+
+- **[$\infty$ Awesome-ness](https://project-awesome.org/)**
+
+
