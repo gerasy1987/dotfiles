@@ -4,19 +4,19 @@ Repository with useful configs and a curated collection of resources to enhance 
 
 ## VS Code Resources
 
-- **[VS Code User Interface](https://code.visualstudio.com/docs/getstarted/userinterface):** Familiarize yourself with the VS Code user interface to enhance your productivity.
+- **[VS Code User Interface](https://code.visualstudio.com/docs/getstarted/userinterface)** is much more flexible than RStudio's.
 
-- **[Setting Up R in VS Code](https://code.visualstudio.com/docs/languages/r):** A comprehensive guide to setting up and using R within VS Code.
+- **[Setting Up R in VS Code](https://code.visualstudio.com/docs/languages/r)** is costly first time and requires `radian` setup for autocompletions and proper R terminal.
 
-- **[Setting Up Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial):** Step-by-step tutorial for configuring Python in VS Code.
+- **[Setting Up Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial):** is easier than R.
 
-- **[Source Control in VS Code](https://code.visualstudio.com/docs/sourcecontrol/overview):** Learn how to manage your source code with Git integration in VS Code, enhancing version control and collaboration.
+- **[Source Control in VS Code](https://code.visualstudio.com/docs/sourcecontrol/overview)** allows you to manage your source code with Git and work remotely with GitHub without need to install dedicated app.
 
-- **[Cursor](https://www.cursor.com):** Cursor is a VS Code wrapper (and replacement) designed to improve your coding efficiency with AI-powered code suggestions and completions.
+- **[Cursor](https://www.cursor.com)** is a VS Code wrapper (and replacement) designed to improve your coding efficiency with AI-powered code suggestions and completions.
 
-- **[Quarto in VS Code](https://quarto.org/docs/tools/vscode.html):** Instructions for integrating Quarto with VS Code for document authoring.
+- **[Quarto in VS Code](https://quarto.org/docs/tools/vscode.html)** is as good as Quarto in RStudio with full support for chunk controls and visual editor.
 
-- VS Code Packages:
+- A list of useful VS Code packages:
 
     - **[Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight):** Highlights color codes in your code, making it easier to visualize color values.
     - **[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop):** A comprehensive LaTeX editing environment within VS Code.
@@ -32,26 +32,27 @@ Repository with useful configs and a curated collection of resources to enhance 
 
 ## RStudio Resources
 
-- **[Quarto in RStudio](https://quarto.org/docs/tools/rstudio.html):**  Guide for using Quarto within RStudio.
+- **[Quarto in RStudio](https://quarto.org/docs/tools/rstudio.html)** is the modern alternative to R Markdown or LaTeX. Works with pandoc for converting documents to any format + pairs nicely with RevealJS for html slides.
 
-- **[Command Palette in RStudio](https://docs.posit.co/ide/user/ide/guide/ui/command-palette.html):** Explore the command palette in RStudio for efficient command execution (`Ctrl`/`Cmd` + `Shift` + `P`).
+- **[Keybindings Cheatsheet in RStudio](https://support.posit.co/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE)** allow to minimize use of mouse with RStudio. Press `Alt`+`Shift`+`K` for cheatsheet.
 
-- **[Keybindings in RStudio](https://support.posit.co/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE):** Learn better way of using RStudio without touching mouse as much as possible (`Alt`+`Shift`+`K`)
+- **[Command palette in RStudio](https://docs.posit.co/ide/user/ide/guide/ui/command-palette.html)** allows you to forget about learning shortcuts and digging into menuse. Just press `Ctrl`/`Cmd` + `Shift` + `P`.
+
 
 - **[Version Control in RStudio](https://docs.posit.co/ide/user/ide/guide/tools/version-control.html):** Learn how to manage your projects with version control tools integrated into RStudio.
 
-- **[GitHub Copilot in RStudio](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html):** Discover how to use GitHub Copilot in RStudio for AI-powered code suggestions, available for free to educators through [GitHub for Education](https://docs.github.com/en/copilot/managing-copilot/managing-copilot-as-an-individual-subscriber/managing-your-copilot-subscription/getting-free-access-to-copilot-as-a-student-teacher-or-maintainer).
+- **[GitHub Copilot in RStudio](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html)** provides AI-powered code suggestions in RStudio directly, available for free to educators through [GitHub for Education](https://docs.github.com/en/copilot/managing-copilot/managing-copilot-as-an-individual-subscriber/managing-your-copilot-subscription/getting-free-access-to-copilot-as-a-student-teacher-or-maintainer).
 
 - [`TinyTeX` package in R](https://yihui.org/tinytex/) will solve all your LaTeX troubles. Just make sure to install it with `bundle = "TinyTeX-2"` option to make sure you install all packages.
 
 ## Quality of Life Improvements
 
 - **Reduce need to drag and stretch windows by using tiling window managers:**
-  - [Aerospace](https://github.com/nikitabobko/AeroSpace) or [Yabai](https://github.com/koekeishiya/yabai) on MacOS
-  - [komorebi](https://github.com/LGUG2Z/komorebi) on Windows
-  - Whatever you want in Linux (i3, bspwn, Awesome, qtile...)
+  - MacOS: [Aerospace](https://github.com/nikitabobko/AeroSpace) or [Yabai](https://github.com/koekeishiya/yabai)
+  - Windows: [komorebi](https://github.com/LGUG2Z/komorebi)
+  - Linux: i3, bspwn, Awesome, qtile...
 
-- **Learn basic terminal commands (`cd`, `ls`, `mkdir`, `mv`, `nano`, `sudo`, etc.)**
+- **Learn basic terminal commands (`cd`, `cp`, `ls`, `mkdir`, `mv`, `man`, `sudo`, etc.)**
   - [`fish` shell](https://fishshell.com/) will make your life easier with autocompletion and easy history search with `Ctrl`+`R`
   - [`starship` terminal prompt](https://starship.rs/) will make your prompt be more useful too
 
@@ -62,11 +63,11 @@ Repository with useful configs and a curated collection of resources to enhance 
 
 - **[Quarto Visual Editor](https://quarto.org/docs/visual-editor/):** A user-friendly visual editor for Quarto, simplifying document creation and editing.
 
-- **[Package Managers](https://brew.sh/):** Use tools like Homebrew, apt, or pacman to efficiently install and manage software on your system.
+- **[Package Managers](https://brew.sh/)** like Homebrew, apt, or pacman allow you to efficiently install and manage software on your system. It also allows you to remove apps on MacOS properly. The only commands you need to learn to all of those are `search`, `install`, `upgrade`/`update` and `remove`/`uninstall`
 
-- **[Multi-Cursor Editing](https://code.visualstudio.com/docs/editor/codebasics#_multi-cursor-modifications):** Master the use of multi-cursor features in editors like RStudio and VS Code to enhance your coding productivity.
+- **[Multi-Cursor Editing](https://code.visualstudio.com/docs/editor/codebasics#_multi-cursor-modifications)** is a game-changer and is fully supported in editors like RStudio and VS Code and superseeds base search and replace functionality.
 
-- **[Fonts with Ligatures](https://github.com/tonsky/FiraCode):** Enhance code readability with fonts like Fira Code that support ligatures, providing a more visually appealing coding experience.
+- **Use fonts with Ligatures (like [FiraCode](https://github.com/tonsky/FiraCode))** to enhance code readability with proper rendering of combinations of symbols, like `<-`, `<=` `!=`.
 
 ## **Everything is ![Awesome](https://awesome.re/badge.svg)**
     
