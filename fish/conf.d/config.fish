@@ -61,4 +61,4 @@ alias lg='exa --long --grid'
 alias rstudio-daily='wget -P ~/Downloads/programs/ https://rstudio.org/download/latest/daily/desktop/jammy/rstudio-latest-amd64.deb && sudo nala install ~/Downloads/programs/rstudio-latest-amd64.deb && sudo rm ~/Downloads/programs/rstudio-latest-amd64.deb'
 
 # for radian interface to R
-# alias r="radian"
+alias r="radian"
