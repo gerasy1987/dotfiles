@@ -1,8 +1,39 @@
 # `dotfiles` and useful resources
 
-Repository with useful configs and a curated collection of resources to enhance your productivity and workflow, focusing on Visual Studio Code (VS Code) and RStudio. It includes tools and guides for working with R, Python, Git, and Quarto.
+Repository with personal config files and a curated list of resources to enhance your productivity and workflow.
 
-## VS Code Resources
+## Installation of configs
+
+To copy these dotfiles, I suggest to previewuse [GNU Stow](https://www.gnu.org/software/stow/):
+
+1. **Install Stow** (on most Linux distros):
+
+   ```sh
+   sudo apt install stow   # Debian/Ubuntu
+   # or
+   sudo pacman -S stow     # Arch
+   # or
+   sudo dnf install stow   # Fedora
+   ```
+
+2. **Clone this repository into your home directory:**
+
+   ```sh
+   git clone https://github.com/gerasy1987/dotfiles.git ~/dotfiles
+   cd ~/dotfiles
+   ```
+
+3. **Stow the desired config folders** (e.g., `vim`, `zsh`, `nvim`):
+
+   ```sh
+   stow bash
+   stow hypr
+   stow foot
+   ```
+
+This will symlink the config files into your `$HOME` directory with correct relative paths.
+
+## VS Code resources
 
 - **[VS Code User Interface](https://code.visualstudio.com/docs/getstarted/userinterface)** is much more flexible than RStudio's.
 
@@ -30,7 +61,7 @@ Repository with useful configs and a curated collection of resources to enhance 
     - **[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one):** Provides comprehensive Markdown support with shortcuts, table of contents, and more in VS Code.
     - **[Sublime Keybindings](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings):** Brings Sublime Text keybindings to VS Code for users familiar with Sublime Text shortcuts.
 
-## RStudio Resources
+## RStudio resources
 
 - **[Quarto in RStudio](https://quarto.org/docs/tools/rstudio.html)** is the modern alternative to R Markdown or LaTeX. Works with pandoc for converting documents to any format + pairs nicely with RevealJS for html slides.
 
@@ -45,7 +76,7 @@ Repository with useful configs and a curated collection of resources to enhance 
 
 - [`TinyTeX` package in R](https://yihui.org/tinytex/) will solve all your LaTeX troubles. Just make sure to install it with `bundle = "TinyTeX-2"` option to make sure you install all packages.
 
-## Quality of Life Improvements
+## QoL improvements
 
 - **Reduce need to drag and stretch windows by using tiling window managers:**
   - MacOS: [Aerospace](https://github.com/nikitabobko/AeroSpace) or [Yabai](https://github.com/koekeishiya/yabai)
@@ -70,12 +101,14 @@ Repository with useful configs and a curated collection of resources to enhance 
 - **Use fonts with Ligatures (like [FiraCode](https://github.com/tonsky/FiraCode))** to enhance code readability with proper rendering of combinations of symbols, like `<-`, `<=` `!=`.
 
 ## **Everything is ![Awesome](https://awesome.re/badge.svg)**
-    
+
 - **[Awesome Quarto](https://github.com/mcanouil/awesome-quarto)** 
 
 - **[Awesome VS Code](https://github.com/viatsko/awesome-vscode)** 
 
 - **[Awesome Git](https://github.com/dictcp/awesome-git)**
+
+- **[Awesome Hyprland](https://github.com/hyprland-community/awesome-hyprland)** 
 
 - **[$\infty$ Awesome-ness](https://project-awesome.org/)**
 
