@@ -1,0 +1,10 @@
+[$Version]
+update_info=kscreenlocker.upd:0.1-autolock
+
+[Daemon]
+Autolock=false
+
+[Greeter][Wallpaper][org.kde.image][General]
+Image=/home/zhora/Pictures/pxfuel.jpg
+PreviewImage=/home/zhora/Pictures/pxfuel.jpg
+SlidePaths=/home/zhora/.local/share/wallpapers/,/usr/share/wallpapers/

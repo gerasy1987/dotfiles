@@ -1,0 +1,170 @@
+[$Version]
+update_info=filepicker.upd:filepicker-remove-old-previews-entry,fonts_global.upd:Fonts_Global,fonts_global_toolbar.upd:Fonts_Global_Toolbar,icons_remove_effects.upd:IconsRemoveEffects,kwin.upd:animation-speed,style_widgetstyle_default_breeze.upd:StyleWidgetStyleDefaultBreeze
+
+[ColorEffects:Disabled]
+ChangeSelectionColor=
+Color=56,56,56
+ColorAmount=0
+ColorEffect=0
+ContrastAmount=0.65000000000000002
+ContrastEffect=1
+Enable=
+IntensityAmount=0.10000000000000001
+IntensityEffect=2
+
+[ColorEffects:Inactive]
+ChangeSelectionColor=true
+Color=112,111,110
+ColorAmount=0.025000000000000001
+ColorEffect=2
+ContrastAmount=0.10000000000000001
+ContrastEffect=2
+Enable=true
+IntensityAmount=0
+IntensityEffect=0
+
+[Colors:Button]
+BackgroundAlternate=80,114,82
+BackgroundNormal=40,40,40
+DecorationFocus=98,146,101
+DecorationHover=98,146,101
+ForegroundActive=98,146,101
+ForegroundInactive=55,115,117
+ForegroundLink=150,223,154
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=235,219,178
+ForegroundPositive=39,174,96
+ForegroundVisited=127,140,141
+
+[Colors:Complementary]
+DecorationFocus=98,146,101
+DecorationHover=98,146,101
+ForegroundActive=98,146,101
+ForegroundLink=98,146,101
+
+[Colors:Selection]
+BackgroundAlternate=80,114,82
+BackgroundNormal=80,114,82
+DecorationFocus=98,146,101
+DecorationHover=98,146,101
+ForegroundActive=98,146,101
+ForegroundInactive=255,255,255
+ForegroundLink=72,107,74
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=255,255,255
+ForegroundPositive=39,174,96
+ForegroundVisited=189,195,199
+
+[Colors:Tooltip]
+BackgroundAlternate=60,56,54
+BackgroundNormal=40,40,40
+DecorationFocus=98,146,101
+DecorationHover=98,146,101
+ForegroundActive=98,146,101
+ForegroundInactive=55,115,117
+ForegroundLink=150,223,154
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=235,219,178
+ForegroundPositive=39,174,96
+ForegroundVisited=127,140,141
+
+[Colors:View]
+BackgroundAlternate=60,56,54
+BackgroundNormal=40,40,40
+DecorationFocus=98,146,101
+DecorationHover=98,146,101
+ForegroundActive=98,146,101
+ForegroundInactive=55,115,117
+ForegroundLink=150,223,154
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=235,219,178
+ForegroundPositive=39,174,96
+ForegroundVisited=127,140,141
+
+[Colors:Window]
+BackgroundAlternate=60,56,54
+BackgroundNormal=40,40,40
+DecorationFocus=98,146,101
+DecorationHover=98,146,101
+ForegroundActive=98,146,101
+ForegroundInactive=55,115,117
+ForegroundLink=150,223,154
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=235,219,178
+ForegroundPositive=39,174,96
+ForegroundVisited=127,140,141
+
+[DirSelect Dialog]
+DirSelectDialog Size=2533,1522
+History Items[$e]=file:$HOME/Dropbox/Learning About Bias,file:$HOME/Dropbox/Learning About Bias,file:$HOME/Dropbox/Learning About Bias,file:$HOME/Downloads/test,file:$HOME/Dropbox/Learning About Bias,file:$HOME/Dropbox/CausalQueries,file:$HOME/Dropbox/05 - Vanderbilt/01_by_semester/03_2024_fall/PSCI2270_conducting_political_research,file:$HOME/Dropbox/internet_RCT,file:$HOME/Dropbox/Learning About Bias,file:$HOME/Downloads/temp,file:$HOME/Dropbox/Learning About Bias,file:$HOME/Dropbox/Learning About Bias,file:$HOME/Dropbox/Learning About Bias,file:$HOME/Dropbox/05 - Vanderbilt/01_by_semester/03_2024_fall/PSCI2270_conducting_political_research,file:$HOME/Dropbox/internet_RCT/05_IRB/Vanderbilt/consent,file:///opt/xdman/chrome-extension,file:$HOME/Dropbox/05 - Vanderbilt/01_by_semester/cpw_2024_25,file:$HOME/Dropbox/CausalQueries,file:$HOME/Dropbox/internet_RCT/00_Funding/USAID grant,file:$HOME/Dropbox/internet_RCT,file:$HOME/Dropbox_work,file:///run/media/zhora/ca5a4d1d-a8be-4d8c-b596-f06de38cde7c/steam,file:///run/media/zhora/ca5a4d1d-a8be-4d8c-b596-f06de38cde7c,file:///run/media/zhora/Extreme SSD/steam_games,file:$HOME/.config/Kvantum,file:$HOME/.config/Kvantum/Gruvbox-Retro,file:///run/media/zhora/6D9D179953E315EF/.99_videos,file:$HOME/Downloads/video,file:///home,file:$HOME/Downloads/trnt,file:$HOME/Documents
+
+[General]
+AccentColor=98,146,101
+BrowserApplication=microsoft-edge-beta.desktop
+ColorScheme=GruvboxColors
+ColorSchemeHash=68f7da041112b660ac4e6911cf4bf8a7b361feda
+LastUsedCustomAccentColor=98,146,101
+TerminalApplication=kitty
+TerminalService=kitty.desktop
+XftAntialias=true
+XftHintStyle=hintslight
+XftSubPixel=vbgr
+fixed=CaskaydiaCove Nerd Font Mono,14,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+font=Ubuntu Nerd Font,14,-1,5,50,0,0,0,0,0
+menuFont=Ubuntu Nerd Font,14,-1,5,50,0,0,0,0,0
+smallestReadableFont=Ubuntu Nerd Font,12,-1,5,50,0,0,0,0,0
+toolBarFont=Ubuntu Nerd Font,14,-1,5,50,0,0,0,0,0
+
+[Icons]
+Theme=Gruvbox-Plus-Dark
+
+[KDE]
+AnimationDurationFactor=0.17677669529663687
+LookAndFeelPackage=org.kde.breezedark.desktop
+ShowDeleteCommand=false
+SingleClick=false
+
+[KFileDialog Settings]
+Allow Expansion=false
+Automatically select filename extension=false
+Breadcrumb Navigation=false
+Decoration position=2
+LocationCombo Completionmode=5
+PathCombo Completionmode=5
+Preview Width=291
+Show Bookmarks=false
+Show Full Path=false
+Show Inline Previews=true
+Show Preview=false
+Show Speedbar=true
+Show hidden files=true
+Sort by=Date
+Sort directories first=true
+Sort hidden files last=false
+Sort reversed=true
+Speedbar Width=166
+View Style=Detail
+
+[KScreen]
+ScaleFactor=1.0625
+ScreenScaleFactors=eDP-1=1.0625;HDMI-1=1.0625;DP-1=1.0625;DP-2=1.0625;DP-3=1.0625;DP-4=1.0625;
+
+[PreviewSettings]
+MaximumRemoteSize=0
+
+[Shortcuts]
+Copy=Ctrl+C
+
+[WM]
+activeBackground=39,39,39
+activeBlend=235,219,178
+activeFont=Ubuntu Nerd Font,14,-1,5,50,0,0,0,0,0
+activeForeground=235,219,178
+inactiveBackground=40,40,40
+inactiveBlend=60,56,54
+inactiveForeground=204,190,155

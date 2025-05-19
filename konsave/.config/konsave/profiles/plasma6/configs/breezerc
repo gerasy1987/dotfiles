@@ -1,0 +1,13 @@
+[Style]
+MenuOpacity=89
+
+[Windeco]
+ButtonSize=ButtonSmall
+
+[Windeco Exception 0]
+BorderSize=0
+Enabled=true
+ExceptionPattern=.*
+ExceptionType=0
+HideTitleBar=true
+Mask=0

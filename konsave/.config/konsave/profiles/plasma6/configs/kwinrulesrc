@@ -1,0 +1,250 @@
+[$Version]
+update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
+
+[1]
+Description=Application settings for brave-browser
+clientmachine=localhost
+opacityactiverule=2
+wmclass=brave brave-browser
+wmclasscomplete=true
+wmclassmatch=1
+
+[10]
+Description=new window
+opacityactive=98
+opacityactiverule=2
+opacityinactive=90
+opacityinactiverule=2
+types=1
+
+[11]
+Description=panel
+opacityactive=98
+opacityactiverule=2
+opacityinactive=95
+opacityinactiverule=2
+types=4
+wmclasscomplete=true
+
+[12]
+Description=steam
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=steamwebhelper steam
+wmclasscomplete=true
+wmclassmatch=2
+
+[13]
+Description=Settings for PaintTheTownRed.x86_64
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=PaintTheTownRed.x86_64
+wmclasscomplete=true
+wmclassmatch=2
+
+[14]
+Description=eog
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=eog eog
+wmclassmatch=2
+
+[15]
+Description=brave
+opacityactiverule=2
+wmclass=brave
+wmclasscomplete=true
+wmclassmatch=2
+
+[2]
+Description=Application settings for org.kde.gwenview
+clientmachine=localhost
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=gwenview org.kde.gwenview
+wmclasscomplete=true
+wmclassmatch=1
+
+[3]
+Description=Application settings for PaintTheTownRed.x86_64
+clientmachine=localhost
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=PaintTheTownRed.x86_64
+wmclassmatch=1
+
+[4]
+Description=Ghostrunner
+clientmachine=localhost
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=steam_app_1139900
+wmclassmatch=1
+
+[48a770fd-081c-4a7e-a752-af73a4d465dd]
+Description=Settings for PaintTheTownRed.x86_64
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=PaintTheTownRed.x86_64
+wmclasscomplete=true
+wmclassmatch=2
+
+[5]
+Description=steam_apps
+clientmachine=localhost
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=steam_app_*
+wmclassmatch=3
+
+[51fef2f2-0fac-4bf5-a820-029329092feb]
+Description=eog
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=eog eog
+wmclassmatch=2
+
+[5d7a06e8-b502-429f-b958-6aa82b4cf8e0]
+Description=Application settings for org.kde.gwenview
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=gwenview org.kde.gwenview
+wmclasscomplete=true
+wmclassmatch=1
+
+[6]
+Description=Application settings for zoom
+clientmachine=localhost
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=zoom  zoom
+wmclasscomplete=true
+wmclassmatch=1
+
+[66b7f146-5f0d-493c-bf7e-17e62b2dea5f]
+Description=Application settings for org.kde.okular
+opacityactiverule=2
+wmclass=okular org.kde.okular
+wmclasscomplete=true
+wmclassmatch=1
+
+[6fa91b96-1165-4787-83a8-2e96a06d803c]
+Description=New window settings
+opacityactive=95
+opacityactiverule=2
+opacityinactive=85
+opacityinactiverule=2
+types=1
+
+[7]
+Description=Application settings for vlc
+clientmachine=localhost
+opacityactiverule=2
+opacityinactive=85
+wmclass=vlc
+wmclassmatch=1
+
+[732021c3-ebcf-4e40-b679-96054d7d3b7b]
+Description=panel
+opacityactive=73
+opacityactiverule=2
+opacityinactive=73
+opacityinactiverule=2
+types=4
+wmclasscomplete=true
+
+[8]
+Description=Application settings for org.kde.okular
+opacityactiverule=2
+opacityinactive=85
+wmclass=okular org.kde.okular
+wmclasscomplete=true
+wmclassmatch=1
+
+[827345fe-f8c4-44e5-8818-a1a48970f22a]
+Description=Chrome
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=Google-chrome
+wmclasscomplete=true
+wmclassmatch=2
+
+[89ed04dd-4b37-4ae7-b462-ccac33fa8791]
+Description=Microsoft edge
+opacityactiverule=2
+wmclass=edge-beta
+wmclasscomplete=true
+wmclassmatch=2
+
+[9]
+Description=Microsoft edge
+opacityactiverule=2
+opacityinactive=85
+wmclass=edge
+wmclasscomplete=true
+wmclassmatch=2
+
+[90fa9d75-9fd8-4696-8069-da10407ab0a8]
+Description=Ghostrunner
+clientmachine=localhost
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=steam_app_1139900
+wmclassmatch=1
+
+[9df72388-e817-442f-bf71-a4475109098f]
+Description=Application settings for PaintTheTownRed.x86_64
+clientmachine=localhost
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=PaintTheTownRed.x86_64
+wmclassmatch=1
+
+[General]
+count=16
+rules=1,2,3,4,5,6,7,8,9,827345fe-f8c4-44e5-8818-a1a48970f22a,10,11,12,13,14,15
+
+[a2712910-55a1-4bbc-8a25-9e8b20dd7bd9]
+Description=Application settings for zoom
+clientmachine=localhost
+opacityactiverule=2
+wmclass=zoom  zoom
+wmclasscomplete=true
+wmclassmatch=1
+
+[b58ff495-7ab7-41dc-ad04-d518a6402f8b]
+Description=Application settings for brave-browser
+opacityactiverule=2
+wmclass=brave brave-browser
+wmclasscomplete=true
+wmclassmatch=1
+
+[c0076feb-1604-4035-b1b1-022becd50a8e]
+Description=steam_apps
+clientmachine=localhost
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=steam_app_*
+wmclassmatch=3
+
+[cb9e42db-15a2-4c8d-b8bb-5488efbad3ea]
+Description=Application settings for vlc
+clientmachine=localhost
+opacityactiverule=2
+wmclass=vlc
+wmclassmatch=1
+
+[e67d17e8-5329-4f2b-912f-6e27d66185ca]
+Description=steam
+opacityactiverule=2
+opacityinactiverule=2
+wmclass=steamwebhelper steam
+wmclasscomplete=true
+wmclassmatch=2
+
+[f784aa4d-fc02-423a-ab97-c95b3f4b31b8]
+Description=brave
+opacityactiverule=2
+wmclass=brave
+wmclasscomplete=true
+wmclassmatch=2

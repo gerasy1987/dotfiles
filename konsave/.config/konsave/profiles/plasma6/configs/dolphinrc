@@ -1,0 +1,61 @@
+MenuBar=Disabled
+
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding,dolphin_directorysizemode.upd:convert-directorysizecount-to-directorysizemode
+
+[ContentDisplay]
+DirectorySizeMode=ContentSize
+UseShortRelativeDates=false
+
+[DetailsMode]
+ExpandableFolders=false
+PreviewSize=128
+
+[ExtractDialog]
+3840x1600 screen: Height=1486
+3840x1600 screen: Width=2349
+
+[General]
+BrowseThroughArchives=true
+EditableUrl=true
+FilterBar=true
+ShowFullPath=true
+ShowZoomSlider=false
+UseTabForSwitchingSplitView=true
+Version=202
+ViewPropsTimestamp=2023,4,26,16,58,48.324
+
+[IconsMode]
+MaximumTextLines=1
+PreviewSize=112
+
+[InformationPanel]
+dateFormat=ShortFormat
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=16
+
+[KPropertiesDialog]
+2560x1080 screen: Window-Maximized=true
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[MainWindow][Toolbar mainToolBar]
+IconSize=16
+ToolButtonStyle=IconOnly
+
+[PlacesPanel]
+IconSize=16
+
+[PreviewSettings]
+Plugins=comicbookthumbnail,djvuthumbnail,ebookthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,svgthumbnail,ffmpegthumbs
+
+[Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[ViewPropertiesDialog]
+2409x1506 screen: Height=628
+2409x1506 screen: Width=496

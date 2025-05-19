@@ -1,0 +1,34 @@
+// __        __          _                 
+// \ \      / /_ _ _   _| |__   __ _ _ __  
+//  \ \ /\ / / _` | | | | '_ \ / _` | '__| 
+//   \ V  V / (_| | |_| | |_) | (_| | |    
+//    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    
+//                 |___/                   
+//  
+// by Frogprog (2025) 
+// ----------------------------------------------------- 
+{
+   // include modules file
+   "include": [
+      "~/.config/waybar/modules.jsonc"
+   ],
+   // make the bar as the top layer
+   "layer": "top",
+   // make the bar appear on the top
+   "position": "top",
+   "margin-top": 8,      
+   // moduler on the left
+   "modules-left": [
+      "group/info-stuff",
+   ],
+   // modules on the center
+   "modules-center": [
+      "custom/lock",
+      "custom/separator",
+      "custom/shutdown",
+   ],
+   // modules on the right
+   "modules-right": [
+      "group/system-stuff"
+   ],
+}

@@ -1,0 +1,41 @@
+/**
+* ____        __ _ 
+*|  _ \ ___  / _(_)
+*| |_) / _ \| |_| |
+*|  _ < (_) |  _| |
+*|_| \_\___/|_| |_|
+*
+*by Frogprog (2025)
+**/
+
+configuration {
+  modi: "drun,window";
+  display-drun: "";
+  drun-display-format: "{icon}{name}";
+  font: "JetBrainsMono Nerd Font Mono Medium 14";
+  cycle: true;
+  scroll-method: 0;
+  normalize-match: true;
+  show-icons: true;
+  icon-theme: "Gruvbox Dark";
+
+  window-match-fields: "title,class,role,name,desktop";window-command: "wmctrl -i -R {window}";
+  window-format: "{w} - {c} - {t:0}";
+  window-thumbnail: true;
+} 
+
+@theme "gruvbox-dark-soft.rasi"
+
+* {
+  border: 0;
+  border-radius: 8;
+  margin: 0;
+  padding: 2;
+}
+
+window {
+  width: 350px;
+}
+listview {
+  lines: 8;
+}

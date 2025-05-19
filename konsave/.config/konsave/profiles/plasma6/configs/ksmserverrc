@@ -1,0 +1,13 @@
+[$Version]
+update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_value_default_enum
+
+[LegacySession: saved at previous logout]
+count=0
+
+[Session: saved at previous logout]
+clientId1=1017a1a414d140000172588949100000020390005
+count=1
+program1=/home/zhora/.dropbox-dist/dropbox-lnx.x86_64-208.3.5734/dropbox
+restartCommand1=/home/zhora/.dropbox-dist/dropbox-lnx.x86_64-208.3.5734/dropbox,-session,1017a1a414d140000172588949100000020390005_1725897478_765947
+restartStyleHint1=0
+userId1=zhora
