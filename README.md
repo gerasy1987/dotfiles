@@ -6,14 +6,20 @@ Repository with personal config files and a curated list of resources to enhance
 
 To copy these dotfiles, I suggest to previewuse [GNU Stow](https://www.gnu.org/software/stow/):
 
-1. **Install Stow** (on most Linux distros):
+1. **Install Stow** (on most systems):
 
    ```sh
-   sudo apt install stow   # Debian/Ubuntu
-   # or
-   sudo pacman -S stow     # Arch
-   # or
-   sudo dnf install stow   # Fedora
+   # Debian/Ubuntu
+   sudo apt install stow
+
+   # Arch
+   sudo pacman -S stow
+
+   # Fedora
+   sudo dnf install stow
+
+   # macOS (with Homebrew)
+   brew install stow
    ```
 
 2. **Clone this repository into your home directory:**
@@ -23,12 +29,12 @@ To copy these dotfiles, I suggest to previewuse [GNU Stow](https://www.gnu.org/s
    cd ~/dotfiles
    ```
 
-3. **Stow the desired config folders** (e.g., `vim`, `zsh`, `nvim`):
+3. **Stow the desired config folders** (e.g., for shell setup, stow `fish`, `foot`, and `starship`):
 
    ```sh
-   stow bash
-   stow hypr
+   stow fish
    stow foot
+   stow starship
    ```
 
 This will symlink the config files into your `$HOME` directory with correct relative paths.
