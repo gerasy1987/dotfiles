@@ -81,7 +81,7 @@
    // STANDALONE POWER
    "custom/power": {
       "format": "",
-      "on-click": "wlogout",
+      "on-click": "wlogout -b 5",
       "tooltip": "false"
    },
    // MUSIC GROUP
@@ -104,8 +104,8 @@
       "on-scroll-up": "playerctl -p spotify volume 0.02+",
       "on-scroll-down": "playerctl -p spotify volume 0.02-",
       "format-icons": {
-         "Paused": " ",
-         "Playing": " "
+         "Paused": "  ",
+         "Playing": "  "
       }
    },
    "cava": {

@@ -18,45 +18,49 @@ window {
 }
 
 button {
-  border-radius: 8;
-  border-color: #A89984;
+  border-radius: 4;
+  border-color: #ebdbb2;
   font-family: 'JetBrainsMono Nerd Font Mono';
   font-size: 22px;
-  color: #E6D99D;
-  background-color: #32302F;
+  color: #ebdbb2;
+  background-color: #282828;
   border-style: solid;
   border-width: 2px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 20%;
-  margin: 5px;
+  background-size: 35%;
+  margin-top: 400px;
+  margin-bottom: 400px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 button:focus, button:active, button:hover {
+   background-size: 30%;
 	background-color: #665c54;
 	outline-style: none;
 }
 
 #lock {
-   background-image: image(url("icons/lock.png"));
+   background-image: image(url("icons/lock.svg"));
 }
 
 #logout {
-  background-image: image(url("icons/logout.png"));
+  background-image: image(url("icons/logout.svg"));
 }
 
 #suspend {
-  background-image: image(url("icons/suspend.png"));
+  background-image: image(url("icons/suspend.svg"));
 }
 
-#hibernate {
+/* #hibernate {
   background-image: image(url("icons/hibernate.png"));
-}
+} */
 
 #shutdown {
-  background-image: image(url("icons/shutdown.png"));
+  background-image: image(url("icons/shutdown.svg"));
 }
 
 #reboot {
-  background-image: image(url("icons/reboot.png"));
+  background-image: image(url("icons/reboot.svg"));
 }

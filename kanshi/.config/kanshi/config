@@ -1,6 +1,10 @@
-profile Dock {
+profile Dock1 {
     output eDP-1 disable
     output DP-5 enable
+}
+profile Dock2 {
+    output eDP-1 disable
+    output DP-6 enable
 }
 profile Laptop {
     output eDP-1 enable
