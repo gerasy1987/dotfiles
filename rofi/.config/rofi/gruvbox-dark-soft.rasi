@@ -22,17 +22,17 @@
     gruvbox-dark-bg3:          #665c54;
     gruvbox-dark-fg0:          #fbf1c7;
     gruvbox-dark-fg1:          #ebdbb2;
-    gruvbox-dark-red-dark:     #cc241d99;
-    gruvbox-dark-red-light:    #fb493499;
-    gruvbox-dark-green-dark:  #689d6a99;
-    gruvbox-dark-green-light: #8ec07c99;
+    gruvbox-dark-red-dark:     #cc241d66;
+    gruvbox-dark-red-light:    #fb493466;
+    gruvbox-dark-green-dark:  #689d6a66;
+    gruvbox-dark-green-light: #8ec07c66;
     gruvbox-dark-gray:         #a89984;
 
     /* Theme colors */
     background:                  @gruvbox-dark-bg0-soft;
     background-color:            @background;
     foreground:                  @gruvbox-dark-fg1;
-    border-color:                @gruvbox-dark-gray;
+    border-color:                @gruvbox-dark-fg1;
     separatorcolor:              @border-color;
     scrollbar-handle:            @border-color;
 
