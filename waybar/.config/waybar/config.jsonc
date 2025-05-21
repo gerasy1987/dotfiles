@@ -10,25 +10,34 @@
 {
    // include modules file
    "include": [
-      "~/.config/waybar/modules.jsonc"
+      "$HOME/.config/waybar/modules.jsonc"
    ],
    // make the bar as the top layer
    "layer": "top",
    // make the bar appear on the top
    "position": "top",
-   "margin-top": 8,      
+   "margin-top": 8,
+   "fixed-center": true,
+   "reload_style_on_change": true,
    // moduler on the left
    "modules-left": [
-      "group/info-stuff",
+      "custom/launcher",
+      "group/music",
+      "hyprland/window"
    ],
    // modules on the center
    "modules-center": [
-      "custom/lock",
-      "custom/separator",
-      "custom/shutdown",
+      "hyprland/workspaces#part1",
+      // "custom/separator",
+      // "custom/lock",
+      // "custom/separator",
+      "custom/power",
+      "hyprland/workspaces#part2"
    ],
    // modules on the right
    "modules-right": [
-      "group/system-stuff"
+      "group/system",
+      "group/settings",
+      "group/today"
    ],
 }

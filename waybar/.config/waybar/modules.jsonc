@@ -5,10 +5,159 @@
 // |_|  |_|\___/ \__,_|\__,_|_|\___||___/ 
 //                                        
 //  
-// by Frogprog (2025) 
 // ----------------------------------------------------- 
-//Battery moudle
 {
+   // STANDALONE WORKSPACES
+   // WORKSPACES module 1
+   "hyprland/workspaces#part1": {
+      "format": "{icon}",
+      "format-icons": {
+         "1": "[А]",
+         "2": "[Б]",
+         "3": "[В]",
+         "4": "[Г]",
+         "5": "[Д]",
+         "6": "[Е]",
+         "7": "[Ж]",
+         "8": "[З]",
+         "9": "[И]",
+         "10": "[К]",
+         "active": "[]",
+         "urgent": "[!]"
+      },
+      "persistent-workspaces": {
+         "*": [
+            1,
+            2
+         ]
+      },
+      "ignore-workspaces": ["^[3-9]$|^10$"],
+      "disable-scroll": true,
+      "warp-on-scroll": true
+   },
+   // WORKSPACES module 2
+   "hyprland/workspaces#part2": {
+      "format": "{icon}",
+      "format-icons": {
+         "1": "[А]",
+         "2": "[Б]",
+         "3": "[В]",
+         "4": "[Г]",
+         "5": "[Д]",
+         "6": "[Е]",
+         "7": "[Ж]",
+         "8": "[З]",
+         "9": "[И]",
+         "10": "[К]",
+         "active": "[]",
+         "urgent": "[!]"
+      },
+      "persistent-workspaces": {
+         "*": [
+            3,
+            4
+         ]
+      },
+      "ignore-workspaces": ["^[1-2]$"],
+      "disable-scroll": true,
+      "warp-on-scroll": true
+      // "on-scroll-up": "hyprctl dispatch workspace e+1",
+      // "on-scroll-down": "hyprctl dispatch workspace e-1"
+   },
+   // STANDALONE ROFI launcher module
+   "custom/launcher": {
+      "format": "󰣛",
+      "icon-size": 22,
+      "on-click": "rofi -show drun",
+      "tooltip": false
+   },
+   // STANDALONE WINDOW
+   "hyprland/window": {
+      "format": "{class}",
+      "max-length": 60,
+      "icon": true,
+      "icon-size": 20
+   },
+   // STANDALONE POWER
+   "custom/power": {
+      "format": "",
+      "on-click": "wlogout",
+      "tooltip": "false"
+   },
+   // MUSIC GROUP
+   // EXPANDOR for music
+   "custom/expandm": {
+      "format": "󰎄",
+      "tooltip": false
+   },
+   // CAVA + SPOTIFY module
+   "custom/playerctl": {
+      "format": "{2} <span>{0}</span>",
+      "return-type": "json",
+      "exec": "playerctl -p spotify metadata -f '{\"text\": \"{{markup_escape(title)}} - {{markup_escape(artist)}} {{ duration(position) }}/{{ duration(mpris:length) }}\", \"tooltip\": \"{{markup_escape(title)}} - {{markup_escape(artist)}}  {{ duration(position) }}/{{ duration(mpris:length) }}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+      "tooltip": false,
+      "on-click-middle": "playerctl -p spotify previous",
+      "on-click": "playerctl -p spotify play-pause",
+      "on-click-right": "playerctl -p spotify next",
+      "on-click-forward": "playerctl -p spotify position 10+",
+      "on-click-backward": "playerctl -p spotify position 10-",
+      "on-scroll-up": "playerctl -p spotify volume 0.02+",
+      "on-scroll-down": "playerctl -p spotify volume 0.02-",
+      "format-icons": {
+         "Paused": " ",
+         "Playing": " "
+      }
+   },
+   "cava": {
+      "framerate": 40,
+      "autosens": 0,
+      "sensitivity": 38,
+      "bars": 11,
+      "lower_cutoff_freq": 50,
+      "higher_cutoff_freq": 12000,
+      "method": "pulse",
+      "hide_on_silence": false,
+      "sleep_timer": 2,
+      "source": "auto",
+      "stereo": false,
+      "reverse": false,
+      "bar_delimiter": 0,
+      "monstercat": false,
+      "waves": false,
+      "noise_reduction": 0.77,
+      "input_delay": 0,
+      "format-icons": [
+         "▁",
+         "▂",
+         "▃",
+         "▄",
+         "▅",
+         "▆",
+         "▇"
+         // "█"
+      ],
+      "actions": {
+         "on-click-right": "mode"
+      }
+   },
+   // group
+   "group/music": {
+      "orientation": "inherit",
+      "drawer": {
+         "transition-duration": 500,
+         "transition-left-to-right": true,
+         "click-to-reveal": true
+      },
+      "modules": [
+         "custom/expandm",
+         "custom/playerctl",
+         "cava"
+         // "custom/separator",
+         // "custom/separator"
+      ]
+   },
+   // SETTINGS GROUP
+   // BATTERY module
    "battery": {
       "interval": 30,
       "states": {
@@ -29,46 +178,87 @@
          "󰁹"
       ],
    },
-   // Language moudle
+   // LANGUAGE module
    "hyprland/language": {
-      "format-en": "EN",
-      "format-ru": "RU",
+      "format-en": "🗽",
+      "format-ru": "🪆",
    },
-   // Hyrland workspaces moudle
-   "hyprland/workspaces": {
-      "format": "{icon}",
+   // BRIGHTNESS module that works!
+   "backlight": {
+      "interval": 2,
+      "align": 0,
+      "rotate": 0,
+      "format": "{icon} {percent}%",
+      "format-icons": [
+         "󰃞",
+         "󰃟",
+         "󰃠"
+      ],
+      "on-click": "",
+      "on-click-middle": "",
+      "on-click-right": "",
+      "on-update": "",
+      "on-scroll-up": "$HOME/.config/waybar/scripts/brightness.sh --inc",
+      "on-scroll-down": "$HOME/.config/waybar/scripts/brightness.sh --dec",
+      "smooth-scrolling-threshold": 1,
+   },
+   // VOLUME module
+   "pulseaudio": {
+      "format": "{volume}% {icon}",
+      "format-bluetooth": "{volume}% ",
+      "format-muted": "",
       "format-icons": {
-         "1": "[А]",
-         "2": "[Б]",
-         "3": "[В]",
-         "4": "[Г]",
-         "5": "[Д]",
-         "6": "[Е]",
-         "7": "[Ж]",
-         "8": "[З]",
-         "9": "[И]",
-         "10": "[К]",
-         "active": "[]",
-         "urgent": "[!]"
-         // "default": " ○ ",
-      },
-      "persistent-workspaces": {
-         "*": [
-            1,
-            2,
-            3,
-            4
+         "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+         "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+         "headphone": "",
+         "hands-free": "",
+         "headset": "",
+         "phone": "",
+         "phone-muted": "",
+         "portable": "",
+         "car": "",
+         "default": [
+            "",
+            ""
          ]
       },
-      "disable-scroll": true,
-      "warp-on-scroll": true,
-      "on-scroll-up": "hyprctl dispatch workspace e+1",
-      "on-scroll-down": "hyprctl dispatch workspace e-1"
+      "scroll-step": 1,
+      "on-click": "pavucontrol-qt",
+      "ignored-sinks": [
+         "Easy Effects Sink"
+      ]
    },
+   // BLUETOOTH module
+   "bluetooth": {
+      "format-on": "󰂯",
+      "format-off": "BT-off",
+      "format-disabled": "󰂲",
+      "format-connected-battery": "󰂯",
+      // "format-alt": "{device_alias} {device_battery_percentage}% 󰂯",
+      "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+      "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+      "on-click": "systemsettings kcm_bluetooth",
+      "on-click-right": "bluedevil-wizard",
+   },
+   // group
+   "group/settings": {
+      "orientation": "inherit",
+      "modules": [
+         "bluetooth",
+         "pulseaudio",
+         "backlight",
+         "battery",
+         "hyprland/language"
+      ]
+   },
+   // TODAY GROUP
+   // CLOCK module
    "clock": {
       "interval": 1,
       // "format-alt": "{:%H:%M}  ",
-      "format": "󰃰 {:%Y-%m-%d/%R}",
+      "format": "{:%Y-%m-%d/%R}",
       "tooltip-format": "<tt><small><small>{calendar}</small></small></tt>",
       "calendar": {
          "mode": "year",
@@ -91,115 +281,57 @@
          "on-scroll-down": "shift_down"
       }
    },
-   "hyprland/window": {
-      //"format": "{}"   // <--- these is the default value  
-      "format": "{title}",
-      "max-length": 60,
-      "icon": true,
-      "icon-size": 20,
+   // weather module
+   "custom/weather": {
+      "tooltip": true,
+      "format": "{}",
+      "interval": 30,
+      "exec": "$HOME/.config/waybar/scripts/waybar-wttr.py",
+      "return-type": "json"
    },
-   // bluetooth module
-   "bluetooth": {
-      "format-on": " 󰂯 ",
-      "format-off": "BT-off",
-      "format-disabled": " 󰂲 ",
-      "format-connected-battery": " 󰂯 ",
-      "format-alt": "{device_alias} {device_battery_percentage}% 󰂯",
-      "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-      "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
-      "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
-      "on-click-right": "systemsettings kcm_bluetooth",
+   // group
+   "group/today": {
+      "orientation": "inherit",
+      "modules": [
+         "custom/weather",
+         "clock"
+      ]
    },
+   // SYS-INFO GROUP
    // tray module
    "tray": {
       "icon-size": 22,
       "spacing": 10
    },
-   // volume module
-   "pulseaudio": {
-      "format": "{volume}% {icon}",
-      "format-bluetooth": "{volume}% {icon}",
-      "format-muted": "",
-      "format-icons": {
-         "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
-         "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
-         "headphone": "",
-         "hands-free": "",
-         "headset": "",
-         "phone": "",
-         "phone-muted": "",
-         "portable": "",
-         "car": "",
-         "default": [
-            "",
-            ""
-         ]
-      },
-      "scroll-step": 1,
-      "on-click": "pavucontrol-qt",
-      "ignored-sinks": [
-         "Easy Effects Sink"
-      ]
+   // HARDWARE modules
+   "cpu": {
+      "format": "󰻠",
+      "tooltip": true
    },
+   "memory": {
+      "format": "󰍛",
+      "tooltip": true
+   },
+   "temperature": {
+      "critical-threshold": 80,
+      "format": ""
+   },
+   // GPU SWITCHER module
    "custom/gpu_switcher": {
-    "exec": "bash ~/.config/waybar/scripts/gpu-switcher.sh",
-    "return-type": "json",
-    "interval": 10,
-    "on-click": "bash ~/.config/waybar/scripts/gpu-mode-menu.sh",
-    "tooltip": false
-},
-   // separator betweeen different modules
-   "custom/separator": {
-      "format": "|",
-      "interval": "once",
-      "tooltip": false
-   },
-   // app launcher
-   "custom/launcher": {
-      "format": " 󰣛 ",
-      "icon-size": 22,
-      "on-click": "rofi -show drun",
-      "tooltip": "false",
-   },
-   
-   // modules right group
-   "group/system-stuff": {
-      "orientation": "horizontal",
-      "modules": [
-         // "network", 
-         // "custom/separator",
-         "group/expand",
-         "custom/separator",
-         "bluetooth",
-         "custom/separator",
-         "pulseaudio",
-         "custom/separator",
-         "battery",
-         "custom/separator",
-         "hyprland/language",
-         "custom/separator",
-         "clock"
-         
-      ]
-   },
-   // modules left group
-   "group/info-stuff": {
-      "orientation": "horizontal",
-      "modules": [
-         "custom/launcher",
-         "hyprland/workspaces",
-         "custom/separator",
-         "hyprland/window"
-      ]
+      "exec": "$HOME/.config/waybar/scripts/gpu-switcher.sh",
+      "return-type": "json",
+      "format": "{}",
+      "interval": 10,
+      "on-click": "$HOME/.config/waybar/scripts/gpu-mode-menu.sh",
+      "tooltip": true
    },
    // expandor of additional group from left
-   "custom/expand": {
-      "format": "󰛁",
+   "custom/expands": {
+      "format": "󰌢",
       "tooltip": false
    },
-   // additional group from left
-   "group/expand": {
+   // additional group from RIGHT
+   "group/system": {
       "orientation": "inherit",
       "drawer": {
          "transition-duration": 500,
@@ -207,49 +339,12 @@
          "click-to-reveal": true
       },
       "modules": [
-         "custom/expand",
+         "custom/expands",
          "tray",
-         // "custom/separator",
-         // "custom/hyprpicker",
-         "custom/separator",
          "custom/gpu_switcher",
-         "custom/separator",
          "cpu",
-         "custom/separator",
          "memory",
-         "custom/separator",
-         "temperature",
-         "custom/separator",
-      ],
-   },
-   // hardware modules
-   "cpu": {
-      "format": "󰻠",
-      "tooltip": true
-   },
-   "memory": {
-      "format": "󰍛"
-   },
-   "temperature": {
-      "critical-threshold": 80,
-      "format": "",
-   },
-   // lock module
-   "custom/lock": {
-      "format": " 󰌾 ",
-      "on-click": "hyprlock",
-      "tooltip": "false",
-   },
-   // shutdown module
-   "custom/shutdown": {
-      "format": " ",
-      "on-click": "wlogout",
-      "tooltip": "false",
-   },
-   // // colorpicker module
-   // "custom/hyprpicker": {
-   //    "format": "",
-   //    "on-click": "hyprpicker",
-   //    "tooltip": false
-   // },
+         "temperature"
+      ]
+   }
 }
