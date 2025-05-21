@@ -31,7 +31,9 @@
             2
          ]
       },
-      "ignore-workspaces": ["^[3-9]$|^10$"],
+      "ignore-workspaces": [
+         "^[3-9]$|^10$"
+      ],
       "disable-scroll": true,
       "warp-on-scroll": true
    },
@@ -58,7 +60,9 @@
             4
          ]
       },
-      "ignore-workspaces": ["^[1-2]$"],
+      "ignore-workspaces": [
+         "^[1-2]$"
+      ],
       "disable-scroll": true,
       "warp-on-scroll": true
       // "on-scroll-up": "hyprctl dispatch workspace e+1",
@@ -66,7 +70,7 @@
    },
    // STANDALONE ROFI launcher module
    "custom/launcher": {
-      "format": "󰣛",
+      "format": "",
       "icon-size": 22,
       "on-click": "rofi -show drun",
       "tooltip": false
@@ -234,13 +238,14 @@
       "format-off": "BT-off",
       "format-disabled": "󰂲",
       "format-connected-battery": "󰂯",
+      "tooltip": true,
       // "format-alt": "{device_alias} {device_battery_percentage}% 󰂯",
       "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
       "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
       "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
       "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
       "on-click": "systemsettings kcm_bluetooth",
-      "on-click-right": "bluedevil-wizard",
+      "on-click-right": "bluedevil-wizard"
    },
    // group
    "group/settings": {
@@ -303,10 +308,27 @@
       "icon-size": 22,
       "spacing": 10
    },
+   "idle_inhibitor": {
+      "tooltip": true,
+      "tooltip-format-activated": "Idle inhibitor is active",
+      "tooltip-format-deactivated": "Idle inhibitor is not active",
+      "format": "{icon}",
+      "format-icons": {
+         "activated": " ",
+         "deactivated": " ",
+      }
+   },
    // HARDWARE modules
    "cpu": {
       "format": "󰻠",
       "tooltip": true
+   },
+   "disk": {
+      "interval": 30,
+      "path": "/",
+      "format": "{percentage_used}% 󰋊",
+      "tooltip": true,
+      "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
    },
    "memory": {
       "format": "󰍛",
@@ -340,7 +362,9 @@
       },
       "modules": [
          "custom/expands",
+         "idle_inhibitor",
          "tray",
+         "disk",
          "custom/gpu_switcher",
          "cpu",
          "memory",

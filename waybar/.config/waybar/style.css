@@ -151,10 +151,10 @@ button:hover {
 
 #custom-launcher {
    background: rgba(40, 40, 40, 0.76);
-   color: #ebdbb2;
+   color: #d3869b;
    border-width: 2px;
    border-style: solid;
-   border-color: #ebdbb2;
+   border-color: #d3869b;
    border-radius: 4px;
    /* border-left: px; */
    margin-left: 10px;
@@ -183,10 +183,10 @@ button:hover {
 
 #custom-power {
    background: rgba(40, 40, 40, 0.76);
-   color: #ebdbb2;
+   color: #fb4934;
    border-width: 2px;
    border-style: solid;
-   border-color: #ebdbb2;
+   border-color: #fb4934;
    border-radius: 4px;
    /* border-left: px; */
    margin-left: 4px;
@@ -202,7 +202,7 @@ button:hover {
    color: #ebdbb2;
    border-width: 2px;
    border-style: solid;
-   border-color: #ebdbb2;
+   border-color: #8ec07c;
    border-radius: 4px;
    /* border-left: px; */
    margin-left: 4px;
@@ -221,7 +221,7 @@ button:hover {
    padding-left: 4px;
    margin-left: 4px;
    padding-bottom: 2px;
-   color: #ebdbb2;
+   color: #8ec07c;
 }
 
 #custom-playerctl {
@@ -415,8 +415,19 @@ button:hover {
    color: #ebdbb2;
 }
 
+#idle_inhibitor {
+   background: transparent;
+   margin-left: 0px;
+   margin-right: 0px;
+   color: #ebdbb2;
+}
 
-#disk,
+#disk {
+   background: transparent;
+   margin-left: 4px;
+   margin-right: 6px;
+   color: #ebdbb2;
+}
 
 #memory {
    background: transparent;
@@ -435,7 +446,7 @@ button:hover {
 
 #tray {
    background: transparent;
-   margin-left: 0px;
+   margin-left: 4px;
    margin-right: 6px;
    color: #ebdbb2;
 }
@@ -446,5 +457,5 @@ button:hover {
 
 #tray>.needs-attention {
    -gtk-icon-effect: highlight;
-   background-color: #eb4d4b;
+   color: #eb4d4b;
 }
