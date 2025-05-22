@@ -8,4 +8,4 @@ if [ ${#text} -gt $maxlength ]; then
     text=${text:0:$maxlength-3}"..."
 fi
 
-playerctl metadata -f '{"text": "'"$text $timer"'", "tooltip": "{{playerName}} : {{markup_escape(title)}} - {{markup_escape(artist)}}  {{ duration(position) }}/{{ duration(mpris:length) }}", "alt": "{{status}}", "class": "{{status}}"}' -F
+playerctl metadata -f '{"text": "'"$text $timer"'", "tooltip": "{{playerName}} : {{markup_escape(title)}} - {{markup_escape(artist)}}  {{ duration(position) }}/{{ duration(mpris:length) }}", "alt": "{{status}}", "class": "{{status}}"}'

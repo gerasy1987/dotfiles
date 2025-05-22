@@ -100,6 +100,8 @@
       "return-type": "json",
       "exec": "$HOME/.config/waybar/scripts/playerinfo.sh",
       "tooltip": true,
+      "interval": 1,
+      "escape": true,
       "on-click-middle": "playerctl previous",
       "on-click": "playerctl play-pause",
       "on-click-right": "playerctl next",
