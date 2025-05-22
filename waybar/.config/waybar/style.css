@@ -415,9 +415,16 @@ button:hover {
    color: #ebdbb2;
 }
 
+#custom-hyprsunset {
+   background: transparent;
+   margin-left: 4px;
+   margin-right: 4px;
+   color: #ebdbb2;
+}
+
 #idle_inhibitor {
    background: transparent;
-   margin-left: 0px;
+   margin-left: 4px;
    margin-right: 0px;
    color: #ebdbb2;
 }
@@ -447,7 +454,7 @@ button:hover {
 #tray {
    background: transparent;
    margin-left: 4px;
-   margin-right: 6px;
+   margin-right: 4px;
    color: #ebdbb2;
 }
 

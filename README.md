@@ -1,33 +1,41 @@
-# `dotfiles` and useful resources
+# Personal dotfiles and resources
 
-Repository with personal config files and a curated list of resources to enhance your productivity and workflow.
+Repository with my personal config files and a list of resources to enhance your productivity and workflow.
 
-## Installation of configs
+## Installation
 
-To copy these dotfiles, I suggest to previewuse [GNU Stow](https://www.gnu.org/software/stow/):
+These dotfiles rely on/assume the following are installed and correctly set (e.g. `fish` is set as your shell of choice). E.g. on Arch-based systems make sure you run the following:
+
+```sh
+pacman -S btop cava fastfetch fish foot hyprland mako rofi starship superfile tlp tlpui kanshi
+```
+
+To copy these dotfiles, I suggest to use [GNU Stow](https://www.gnu.org/software/stow/):
 
 1. **Install Stow** (on most systems):
 
    ```sh
    # Debian/Ubuntu
-   sudo apt install stow
+   apt install stow
 
    # Arch
-   sudo pacman -S stow
+   pacman -S stow
 
    # Fedora
-   sudo dnf install stow
+   dnf install stow
 
    # macOS (with Homebrew)
    brew install stow
    ```
 
-2. **Clone this repository into your home directory:**
+2. **Clone this repository into your `$HOME` directory:**
 
    ```sh
    git clone https://github.com/gerasy1987/dotfiles.git ~/dotfiles
    cd ~/dotfiles
    ```
+
+   If you are unsure what your home directory is, run `echo $HOME` in terminal.
 
 3. **Stow the desired config folders** (e.g., for shell setup, stow `fish`, `foot`, and `starship`):
 
@@ -36,8 +44,15 @@ To copy these dotfiles, I suggest to previewuse [GNU Stow](https://www.gnu.org/s
    stow foot
    stow starship
    ```
+   
+   This will symlink the config files into your `$HOME` directory with correct relative paths.
 
-This will symlink the config files into your `$HOME` directory with correct relative paths.
+After you are done `stow`-ing your dotfiles make sure to **give right permissions to shell scripts in Waybar:**
+
+```sh
+chmod -R +x $HOME/.config/waybar/scripts/
+```
+
 
 ## VS Code resources
 
