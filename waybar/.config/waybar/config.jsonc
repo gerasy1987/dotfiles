@@ -16,7 +16,7 @@
    "layer": "top",
    // make the bar appear on the top
    "position": "top",
-   "margin-top": 8,
+   // "margin-top": 8,
    "fixed-center": true,
    "reload_style_on_change": true,
    // moduler on the left

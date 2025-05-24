@@ -84,7 +84,7 @@
    },
    // STANDALONE POWER
    "custom/power": {
-      "format": "",
+      "format": "ВЫХОД",
       "on-click": "wlogout -b 5",
       "tooltip": "false"
    },
@@ -100,7 +100,7 @@
       "return-type": "json",
       "exec": "$HOME/.config/waybar/scripts/playerinfo.sh",
       "tooltip": true,
-      "interval": 1,
+      // "interval": 1,
       "escape": true,
       "on-click-middle": "playerctl previous",
       "on-click": "playerctl play-pause",

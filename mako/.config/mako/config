@@ -38,8 +38,8 @@ format=<b>%s</b>\n%b
 default-timeout=3000
 
 [urgency=high]
-border-color=#eb4d4bff
-format=⚠️ <b>VNIMANIE!</b> %a\n\n<b>%s</b>\n%b
+border-color=#eb4d4b
+format=⚠️ <b>ВНИМАНИЕ!</b> %a\n\n<b>%s</b>\n%b
 # on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
 default-timeout=0
 
@@ -47,7 +47,7 @@ default-timeout=0
 format=%a <i>(%g messages)</i>\n\n<b>%s</b>\n%b
 
 [grouped urgency=high]
-format=⚠️ <b>VNIMANIE!</b> %a <i>(%g messages)</i>\n\n<b>%s</b>\n%b
+format=⚠️ <b>ВНИМАНИЕ!</b> %a <i>(%g messages)</i>\n\n<b>%s</b>\n%b
 
 [category=mpd]
 default-timeout=2000
