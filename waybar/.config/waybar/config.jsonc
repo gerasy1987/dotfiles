@@ -24,6 +24,7 @@
       "custom/launcher",
       "group/music",
       "hyprland/window"
+      // "wlr/taskbar"
    ],
    // modules on the center
    "modules-center": [

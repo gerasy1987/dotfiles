@@ -24,7 +24,7 @@ configuration {
   cycle: true;
   scroll-method: 0;
   normalize-match: true;
-  show-icons: true;
+  show-icons: false;
   icon-theme: "Gruvbox Dark";
 
   window-format:              "{w} · {c} · {t}";
@@ -43,11 +43,10 @@ configuration {
 }
 
 window {
-  width: 500px;
+  width: 700px;
 }
 listview {
-  lines: 8;
+  lines: 12;
   dynamic: true;
   scrollbar: false;
-  columns: 2;
 }

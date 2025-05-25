@@ -410,6 +410,20 @@ button:hover {
    color: #ebdbb2;
 }
 
+#custom-keybindings {
+   background: transparent;
+   margin-left: 4px;
+   margin-right: 4px;
+   color: #ebdbb2;
+}
+
+#custom-cliphist {
+   background: transparent;
+   margin-left: 4px;
+   margin-right: 4px;
+   color: #ebdbb2;
+}
+
 #idle_inhibitor {
    background: transparent;
    margin-left: 4px;

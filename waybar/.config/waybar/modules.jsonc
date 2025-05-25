@@ -82,6 +82,25 @@
       "icon": true,
       "icon-size": 20
    },
+   // // STANDALONE TASKBAR
+   // "wlr/taskbar": {
+   //    "format": "{icon}",
+   //    "icon-size": 18,
+   //    "tooltip-format": "{title}",
+   //    "on-click": "activate",
+   //    "on-click-middle": "close",
+   //    "ignore-list": [
+   //       "Alacritty",
+   //       "kitty"
+   //    ],
+   //    "app_ids-mapping": {
+   //       "firefoxdeveloperedition": "firefox-developer-edition"
+   //    },
+   //    "rewrite": {
+   //       "Firefox Web Browser": "Firefox",
+   //       "Foot Server": "Terminal"
+   //    }
+   // },
    // STANDALONE POWER
    "custom/power": {
       "format": "ВЫХОД",
@@ -220,43 +239,55 @@
    // LANGUAGE module
    "hyprland/language": {
       "format-en": "🗽",
-      "format-ru": "🪆",
+      "format-ru": "🪆"
    },
    // BRIGHTNESS module that works!
    "backlight": {
-      "interval": 2,
       "align": 0,
       "rotate": 0,
-      "format": "{icon} {percent}%",
+      "format": "{percent}% {icon}",
       "format-icons": [
-         "󰃞",
-         "󰃟",
-         "󰃠"
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
       ],
       "on-click": "",
       "on-click-middle": "",
       "on-click-right": "",
       "on-update": "",
-      "on-scroll-up": "$HOME/.config/waybar/scripts/brightness.sh --inc",
-      "on-scroll-down": "$HOME/.config/waybar/scripts/brightness.sh --dec",
       "smooth-scrolling-threshold": 1,
+      "scroll-step": 1
    },
    // VOLUME module
    "pulseaudio": {
       "format": "{volume}% {icon}",
-      "format-bluetooth": "{volume}% ",
-      "format-muted": "",
+      "format-bluetooth": "{volume}% {icon}  {format_source}",
+      "format-bluetooth-muted": "  {icon}  {format_source}",
+      "format-muted": "  {format_source}",
+      "format-source": "{volume}% ",
+      "format-source-muted": "",
       "format-icons": {
-         "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
-         "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
-         "headphone": "",
+         "headphone": " ",
          "hands-free": "",
          "headset": "",
-         "phone": "",
+         "phone": " ",
          "phone-muted": "",
-         "portable": "",
-         "car": "",
+         "portable": " ",
+         "car": " ",
          "default": [
+            "",
             "",
             ""
          ]
@@ -365,7 +396,7 @@
       "tooltip": true,
       "tooltip-format": "{path}: {used} used out of {total} ({percentage_used}%)",
    },
-	"custom/hyprsunset": {
+   "custom/hyprsunset": {
       "format": "{}",
       "signal": 10,
       "on-click": "$HOME/.config/waybar/scripts/hyprsunset-toggle.sh toggle",
@@ -394,6 +425,20 @@
       "format": "󰌢",
       "tooltip": false
    },
+   // Keybindings
+   "custom/keybindings": {
+      "format": "",
+      "on-click": "$HOME/.config/hypr/scripts/keybindings.sh",
+      "tooltip": false
+   },
+   // Cliphist
+   "custom/cliphist": {
+      "format": "",
+      "on-click": "sleep 0.1 && ~/.config/waybar/scripts/cliphist.sh",
+      "on-click-right": "sleep 0.1 && ~/.config/waybar/scripts/cliphist.sh d",
+      "on-click-middle": "sleep 0.1 && ~/.config/waybar/scripts/cliphist.sh w",
+      "tooltip-format": "Left: Open clipboard Manager\nRight: Delete an entry\nMiddle: Clear list"
+   },
    // additional group from RIGHT
    "group/system": {
       "orientation": "inherit",
@@ -408,6 +453,8 @@
          "cpu",
          "memory",
          "temperature",
+         "custom/cliphist",
+         "custom/keybindings",
          "custom/gpu_switcher",
          "custom/hyprsunset",
          "idle_inhibitor",

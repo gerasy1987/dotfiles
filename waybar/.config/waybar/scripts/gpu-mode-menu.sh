@@ -1,6 +1,6 @@
 #!/bin/bash
 
-choice=$(yad --list --title="Switch GPU Mode" --column="Select GPU Mode" integrated hybrid nvidia)
+choice=$(yad --list --separator="" --title="Switch GPU Mode" --column="Select GPU Mode" integrated hybrid nvidia)
 
 if [ -z "$choice" ]; then
     exit 0

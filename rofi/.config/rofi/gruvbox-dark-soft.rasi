@@ -14,7 +14,7 @@
 * {
     /* Theme settings */
     highlight: bold italic;
-    scrollbar: true;
+    scrollbar: false;
 
     /* Gruvbox dark colors */
     gruvbox-dark-bg0-soft:     #32302f;
@@ -22,17 +22,17 @@
     gruvbox-dark-bg3:          #665c54;
     gruvbox-dark-fg0:          #fbf1c7;
     gruvbox-dark-fg1:          #ebdbb2;
-    gruvbox-dark-red-dark:     #cc241d66;
-    gruvbox-dark-red-light:    #fb493466;
-    gruvbox-dark-green-dark:  #689d6a66;
-    gruvbox-dark-green-light: #8ec07c66;
+    gruvbox-dark-red-dark:     #cc241d;
+    gruvbox-dark-red-light:    #fb4934;
+    gruvbox-dark-yellow-dark:  #d79921;
+    gruvbox-dark-yellow-light: #fabd2f;
     gruvbox-dark-gray:         #a89984;
 
     /* Theme colors */
     background:                  @gruvbox-dark-bg0-soft;
     background-color:            @background;
     foreground:                  @gruvbox-dark-fg1;
-    border-color:                @gruvbox-dark-fg1;
+    border-color:                @gruvbox-dark-gray;
     separatorcolor:              @border-color;
     scrollbar-handle:            @border-color;
 
@@ -43,11 +43,11 @@
     selected-normal-background:  @gruvbox-dark-bg3;
     selected-normal-foreground:  @gruvbox-dark-fg0;
 
-    active-background:           @gruvbox-dark-green-dark;
+    active-background:           @gruvbox-dark-yellow-dark;
     active-foreground:           @background;
     alternate-active-background: @active-background;
     alternate-active-foreground: @active-foreground;
-    selected-active-background:  @gruvbox-dark-green-light;
+    selected-active-background:  @gruvbox-dark-yellow-light;
     selected-active-foreground:  @active-foreground;
 
     urgent-background:           @gruvbox-dark-red-dark;
@@ -58,5 +58,4 @@
     selected-urgent-foreground:  @urgent-foreground;
 }
 
-@import "/usr/share/rofi/themes/gruvbox-common"
-
+@import "gruvbox-common"
