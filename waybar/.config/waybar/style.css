@@ -254,7 +254,7 @@ button:hover {
 
 #battery.charging,
 #battery.plugged {
-   color: #26A65B;
+   color: #8ec07c;
 }
 
 #battery.warning:not(.charging) {
