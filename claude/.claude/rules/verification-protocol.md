@@ -1,7 +1,7 @@
 ---
 paths:
-  - "Slides/**/*.tex"
-  - "Quarto/**/*.qmd"
+  - "**/*.tex"
+  - "**/*.qmd"
   - "docs/**"
 ---
 

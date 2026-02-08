@@ -1,8 +1,6 @@
 ---
 paths:
   - "**/*.R"
-  - "Figures/**/*.R"
-  - "scripts/**/*.R"
 ---
 
 # R Code Standards

@@ -1,7 +1,6 @@
 ---
 paths:
-  - "scripts/**/*.R"
-  - "Figures/**/*.R"
+  - "**/*.R"
 ---
 
 # Replication-First Protocol
