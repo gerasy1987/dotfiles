@@ -39,7 +39,7 @@
 window#waybar {
    border-radius: 0px;
    /* background-color: transparent; */
-   background-color: rgba(40, 40, 40, 0.5);
+   background-color: rgba(40, 40, 40, 0.49);
    border-bottom: transparent;
    color: #ebdbb2;
    transition-property: background-color;
@@ -76,8 +76,6 @@ button:hover {
    /* border: 2px solid #ebdbb2; */
 }
 
-
-
 #workspaces {
    padding: 2px;
    background: rgba(40, 40, 40, 0.76);
@@ -109,11 +107,11 @@ button:hover {
    color: #fabd2f;
 }
 
-#workspaces button.focused {
-   /* border: 2px solid #ebdbb2; */
-   /* background-color: rgba(40, 40, 40, 0.76); */
-   /* box-shadow: inset 0 -2px #ebdbb2; */
-}
+/* #workspaces button.focused {
+   border: 2px solid #ebdbb2;
+   background-color: rgba(40, 40, 40, 0.76);
+   box-shadow: inset 0 -2px #ebdbb2;
+} */
 
 #workspaces button.urgent {
    color: #eb4d4b;
