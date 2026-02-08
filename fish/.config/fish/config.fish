@@ -3,7 +3,7 @@ if status is-interactive
 end
 
 starship init fish | source
-fish_add_path /home/zhora/.local/binfish_add_path
+fish_add_path /home/zhora/.local/bin
 fish_add_path /home/zhora/.cargo/bin/
 
 function fish_greeting
