@@ -221,7 +221,7 @@
       "states": {
          "good": 95,
          "warning": 30,
-         "critical": 20,
+         "critical": 20
       },
       "format": "{capacity}% {icon}",
       "format-charging": "{capacity}% 󰂄",
@@ -234,7 +234,7 @@
          "󰂀",
          "󰂂",
          "󰁹"
-      ],
+      ]
    },
    // LANGUAGE module
    "hyprland/language": {
@@ -346,8 +346,8 @@
       },
       "actions": {
          "on-click-right": "mode",
-         "on-scroll-up": "tz_up",
-         "on-scroll-down": "tz_down",
+        //  "on-scroll-up": "tz_up",
+        //  "on-scroll-down": "tz_down",
          "on-scroll-up": "shift_up",
          "on-scroll-down": "shift_down"
       }
@@ -381,7 +381,7 @@
       "format": "{icon}",
       "format-icons": {
          "activated": "",
-         "deactivated": "",
+         "deactivated": ""
       }
    },
    // HARDWARE modules
@@ -394,7 +394,7 @@
       "path": "/",
       "format": "󰋊",
       "tooltip": true,
-      "tooltip-format": "{path}: {used} used out of {total} ({percentage_used}%)",
+      "tooltip-format": "{path}: {used} used out of {total} ({percentage_used}%)"
    },
    "custom/hyprsunset": {
       "format": "{}",

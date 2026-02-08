@@ -1,6 +1,6 @@
 profile dock_office {
     output eDP-1 disable
-    output DP-1 enable
+    output HDMI-A-1 enable
 }
 profile dock_home1 {
     output eDP-1 disable
