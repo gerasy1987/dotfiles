@@ -103,8 +103,8 @@ If ANY of these fail, the verdict is **REJECTED**:
 ```markdown
 # Quarto vs Beamer Audit: [Lecture Name]
 
-**Beamer source:** `Slides/LectureXX_Topic.tex` ([N] pages)
-**Quarto source:** `Quarto/LectureX_Topic.qmd` ([M] slides)
+**Beamer source:** `<path/to/LectureXX_Topic.tex>` ([N] pages)
+**Quarto source:** `<path/to/LectureX_Topic.qmd>` ([M] slides)
 **Round:** [N]
 **Date:** [YYYY-MM-DD]
 

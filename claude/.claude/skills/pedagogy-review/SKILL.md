@@ -13,7 +13,7 @@ Perform a comprehensive pedagogical review.
 
 1. **Identify the file** specified in `$ARGUMENTS`
    - If no argument, ask user which lecture to review
-   - If just a name, look in `Quarto/` or `Slides/`
+   - If just a name, search the project for matching `.qmd` or `.tex` files using Glob. If the directory is ambiguous, confirm with the user before proceeding.
 
 2. **Launch the pedagogy-reviewer agent** with the full file path
    - The agent checks 13 pedagogical patterns

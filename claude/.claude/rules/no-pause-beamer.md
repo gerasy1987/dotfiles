@@ -15,7 +15,7 @@ paths:
 - All content appears at once on each slide
 - Fragment reveals add complexity without pedagogical benefit for this delivery style
 - Slides should be self-contained and readable as a static PDF handout
-- This applies to all `.tex` files in `Slides/`
+- This applies to all `.tex` slide files in the project
 
 ## What to Do Instead
 

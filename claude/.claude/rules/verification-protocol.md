@@ -38,7 +38,7 @@ paths:
 
 ## Common Pitfalls:
 - **PDF images in HTML**: Browsers don't render PDFs inline → convert to SVG
-- **Relative paths**: `../Figures/` works from `Quarto/` but not from `docs/slides/` → use `sync_to_docs.sh`
+- **Relative paths**: verify that figure paths resolve correctly from the file's directory; deployment directories may differ → use sync scripts if available
 - **Assuming success**: Always verify output files exist AND contain correct content
 - **Stale TikZ SVGs**: extract_tikz.tex diverges from Beamer source → always diff-check
 

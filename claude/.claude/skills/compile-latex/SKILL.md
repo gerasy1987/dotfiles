@@ -11,10 +11,12 @@ Compile a Beamer slide deck using XeLaTeX with full citation resolution.
 
 ## Steps
 
-1. **Navigate to Slides/ directory** and compile with 3-pass sequence:
+1. **Locate the .tex file:** Search for `**/$ARGUMENTS.tex` using Glob. Identify the directory containing the file (referred to as `$SLIDES_DIR` below). If multiple matches or the directory is ambiguous, confirm the path with the user before proceeding.
+
+2. **Navigate to the slides directory** and compile with 3-pass sequence:
 
 ```bash
-cd Slides
+cd $SLIDES_DIR
 TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode $ARGUMENTS.tex
 BIBINPUTS=..:$BIBINPUTS bibtex $ARGUMENTS
 TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode $ARGUMENTS.tex
@@ -23,18 +25,18 @@ TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode $ARGUMENTS.te
 
 **Alternative (latexmk):**
 ```bash
-cd Slides
+cd $SLIDES_DIR
 TEXINPUTS=../Preambles:$TEXINPUTS BIBINPUTS=..:$BIBINPUTS latexmk -xelatex -interaction=nonstopmode $ARGUMENTS.tex
 ```
 
-2. **Check for warnings:**
+3. **Check for warnings:**
    - Grep output for `Overfull \\hbox` warnings
    - Grep for `undefined citations` or `Label(s) may have changed`
    - Report any issues found
 
-3. **Open the PDF** for visual verification:
+4. **Open the PDF** for visual verification:
    ```bash
-   open Slides/$ARGUMENTS.pdf
+   open $SLIDES_DIR/$ARGUMENTS.pdf
    ```
 
 4. **Report results:**

@@ -13,7 +13,7 @@ Run a comprehensive multi-dimensional review of lecture slides. Multiple agents 
 
 ### 1. Identify the File
 
-Parse `$ARGUMENTS` for the filename. Resolve path in `Quarto/` or `Slides/`.
+Parse `$ARGUMENTS` for the filename. Search the project for matching `.qmd` or `.tex` files (e.g., `Glob **/$ARGUMENTS*.qmd` and `**/$ARGUMENTS*.tex`). If multiple matches or the directory is ambiguous, confirm the resolved path with the user before proceeding.
 
 ### 2. Run Review Agents in Parallel
 

@@ -84,7 +84,7 @@ The report will be at: `quality_reports/[Lecture]_qa_critic_round[N].md`
 ```markdown
 # Fix Report: [Lecture Name] — Round [N]
 
-**Source file:** `Quarto/LectureX_Topic.qmd`
+**Source file:** `<path/to/LectureX_Topic.qmd>`
 **Critic report:** `quality_reports/[Lecture]_qa_critic_round[N].md`
 **Date:** [YYYY-MM-DD]
 
