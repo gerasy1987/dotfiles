@@ -211,9 +211,10 @@
    "battery": {
       "interval": 30,
       "states": {
-         "good": 95,
+         "full": 100,
+         "good": 80,
          "warning": 30,
-         "critical": 20
+         "critical": 15
       },
       "format": "{capacity}% {icon}",
       "format-charging": "{capacity}% 󰂄",
@@ -408,7 +409,7 @@
       "exec": "$HOME/.config/waybar/scripts/gpu-switcher.sh",
       "return-type": "json",
       "format": "{}",
-      "interval": 10,
+      "interval": 60,
       "on-click": "$HOME/.config/waybar/scripts/gpu-mode-menu.sh",
       "tooltip": true
    },
