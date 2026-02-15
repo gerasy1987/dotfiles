@@ -35,10 +35,7 @@ Cross-reference all citations in lecture files against bibliography entries.
    - List of quality issues
 
 ## Files to scan:
-```
-Slides/*.tex
-Quarto/*.qmd
-```
+Search the project for all `.tex` and `.qmd` lecture files using Glob (e.g., `**/*.tex` and `**/*.qmd`). If the relevant directories are unclear, confirm with the user which folders contain the lecture files before proceeding.
 
 ## Bibliography location:
 ```

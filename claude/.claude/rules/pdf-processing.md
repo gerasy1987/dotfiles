@@ -1,6 +1,6 @@
 ---
 paths:
-  - "master_supporting_docs/**"
+  - "**/*.pdf"
 ---
 
 # Robust PDF Processing Best Practices

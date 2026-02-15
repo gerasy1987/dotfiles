@@ -1,7 +1,7 @@
 ---
 paths:
-  - "Slides/**/*.tex"
-  - "Quarto/**/*.qmd"
+  - "**/*.tex"
+  - "**/*.qmd"
   - "quality_reports/**"
 ---
 
@@ -37,7 +37,7 @@ Launch parallel review agents for all modified lecture files. Each agent:
 **Example report entry:**
 ```
 ### Issue 7: Wrong preposition
-- **File:** Slides/LectureN_Topic.tex
+- **File:** <path/to/lecture_file.tex>
 - **Location:** Slide "Example Title", line ~247
 - **Current:** "eligible to the program"
 - **Proposed:** "eligible for the program"

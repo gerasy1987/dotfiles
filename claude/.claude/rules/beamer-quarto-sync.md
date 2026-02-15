@@ -1,7 +1,7 @@
 ---
 paths:
-  - "Slides/**/*.tex"
-  - "Quarto/**/*.qmd"
+  - "**/*.tex"
+  - "**/*.qmd"
 ---
 
 # Beamer → Quarto Auto-Sync Rule (MANDATORY)
@@ -14,12 +14,7 @@ When you modify a Beamer `.tex` file, you MUST also apply the equivalent change 
 
 ## Lecture Mapping
 
-<!-- Customize this table for your lectures -->
-| Lecture | Beamer | Quarto |
-|---------|--------|--------|
-| 1 | `Slides/Lecture1_Topic.tex` | `Quarto/Lecture1_Topic.qmd` |
-| 2 | `Slides/Lecture2_Topic.tex` | `Quarto/Lecture2_Topic.qmd` |
-<!-- Add rows as you create lectures -->
+To find matching Beamer/Quarto pairs, search the project for `.tex` and `.qmd` files with matching base names (e.g., `Glob **/*Lecture*.tex` and `**/*Lecture*.qmd`). If the directory structure is unfamiliar, confirm the file locations with the user before proceeding.
 
 ## Workflow (Every Time)
 

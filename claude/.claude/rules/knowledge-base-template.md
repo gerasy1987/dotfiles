@@ -1,8 +1,8 @@
 ---
 paths:
-  - "Slides/**/*.tex"
-  - "Quarto/**/*.qmd"
-  - "scripts/**/*.R"
+  - "**/*.tex"
+  - "**/*.qmd"
+  - "**/*.R"
 ---
 
 # Course Knowledge Base: [YOUR COURSE NAME]

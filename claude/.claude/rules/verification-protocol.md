@@ -47,8 +47,13 @@ paths:
 3. If Overleaf integration: check that files were written to the Overleaf directory
 
 ## Common Pitfalls:
+<<<<<<< HEAD
 - **PDF images in HTML**: Browsers don't render PDFs inline — convert to SVG
 - **Relative paths**: Quarto's `execute-dir: project` means all R paths are relative to project root, not the .qmd file location
+=======
+- **PDF images in HTML**: Browsers don't render PDFs inline → convert to SVG
+- **Relative paths**: verify that figure paths resolve correctly from the file's directory; deployment directories may differ → use sync scripts if available
+>>>>>>> 1a46b4fdd1ac4c2178c60dedab0b1a41d1925d48
 - **Assuming success**: Always verify output files exist AND contain correct content
 - **Stale TikZ SVGs**: extraction source diverges from Beamer source — always diff-check
 
