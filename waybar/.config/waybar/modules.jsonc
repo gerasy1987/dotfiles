@@ -88,6 +88,17 @@
       "on-click": "wlogout -b 5",
       "tooltip": "false"
    },
+   // STANDALONE NETWORK
+   "network": {
+      "format-wifi": "{essid} ",
+      "format-ethernet": "{ipaddr} 󰈀",
+      "format-disconnected": "Offline ⚠",
+      "max-length": 12,
+      "tooltip-format-wifi": "{essid}\n{ifname}: {ipaddr}/{cidr}\nStrength: {signalStrength}%\nUp: {bandwidthUpBytes} Down: {bandwidthDownBytes}",
+      "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}\nUp: {bandwidthUpBytes} Down: {bandwidthDownBytes}",
+      "tooltip-format-disconnected": "Network disconnected",
+      "interval": 5
+   },
    // MUSIC GROUP
    // EXPANDOR for music
    "custom/expandm": {
@@ -430,6 +441,7 @@
       },
       "modules": [
          "custom/expands",
+         "network",
          "disk",
          "cpu",
          "memory",

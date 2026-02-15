@@ -466,3 +466,16 @@ button:hover {
    -gtk-icon-effect: highlight;
    color: #eb4d4b;
 }
+/* NETWORK */
+
+#network {
+   background: transparent;
+   margin-left: 4px;
+   margin-right: 6px;
+   color: #ebdbb2;
+}
+
+#network.disconnected {
+   color: #fb4934;
+   opacity: 0.8;
+}
