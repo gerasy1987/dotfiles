@@ -1,40 +1,38 @@
 ---
 name: deploy
-description: Render Quarto slides and sync to docs/ for GitHub Pages deployment. Use when deploying lecture slides after making changes.
+description: Render and deploy project outputs (slides, documents, figures). Check CLAUDE.md for project-specific deployment targets and commands.
 disable-model-invocation: true
-argument-hint: "[LectureN or 'all']"
+argument-hint: "[filename or 'all']"
 ---
 
-# Deploy Slides to GitHub Pages
+# Deploy Project Outputs
 
-Render Quarto slides and sync all files to `docs/` for GitHub Pages deployment.
+Render documents and deploy outputs to their target locations.
 
 ## Steps
 
-1. **Run the sync script:**
-   - If `$ARGUMENTS` is provided (e.g., "Lecture4"): `./scripts/sync_to_docs.sh $ARGUMENTS`
-   - If no argument: `./scripts/sync_to_docs.sh` (syncs all lectures)
+1. **Read CLAUDE.md** to find:
+   - Deployment commands and scripts (e.g., sync scripts, quarto render, latexmk)
+   - Deployment targets (e.g., docs/ directory, GitHub Pages, Overleaf folder)
+   - Output directories for figures and tables
 
-2. **Verify deployment:**
-   - Check that HTML files exist in `docs/slides/`
-   - Check that `_files/` directories were copied (RevealJS assets)
-   - Check that `docs/Figures/` was synced from `Figures/`
+2. **Render/build the specified target:**
+   - If `$ARGUMENTS` is a specific file: render that file with `quarto render $ARGUMENTS`
+   - If `$ARGUMENTS` is `all`: render all documents listed in CLAUDE.md
+   - If a deployment script exists: run it as specified in CLAUDE.md
 
-3. **Verify interactive charts** (if applicable):
+3. **Verify deployment:**
+   - Check that output files exist at the expected locations
+   - Check that asset directories were copied (e.g., `_files/` for RevealJS)
+   - Check that figures and tables reached their target directories
+
+4. **Verify interactive charts** (if applicable):
    - Grep rendered HTML for interactive widget count
    - Confirm count matches expected
 
-4. **Verify TikZ SVGs** (if applicable):
-   - Check that all referenced SVG files exist in `docs/Figures/LectureN/`
+5. **Verify TikZ SVGs** (if applicable):
+   - Check that all referenced SVG files exist at their deployment locations
 
-5. **Open in browser** for visual verification:
-   - `open docs/slides/LectureX_Name.html`
-   - Confirm slides render, images display, navigation works
+6. **Open output** for visual verification (if possible)
 
-6. **Report results** to the user
-
-## What the sync script does:
-- Renders all `.qmd` files in `Quarto/` (skips `*_backup*` files)
-- Copies HTML and `_files/` directories to `docs/slides/`
-- Copies Beamer PDFs from `Slides/` to `docs/slides/`
-- Syncs `Figures/` to `docs/Figures/` using rsync
+7. **Report results** to the user

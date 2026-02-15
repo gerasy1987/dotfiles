@@ -1,13 +1,13 @@
 ---
 paths:
-  - "Slides/**/*.tex"
-  - "Quarto/**/*.qmd"
-  - "scripts/**/*.R"
+  - "**/*.tex"
+  - "**/*.qmd"
+  - "**/*.R"
 ---
 
 # Quality Gates & Scoring Rubrics
 
-**Purpose:** Define objective quality thresholds for committing and deploying course materials.
+**Purpose:** Define objective quality thresholds for committing and deploying materials.
 
 ---
 

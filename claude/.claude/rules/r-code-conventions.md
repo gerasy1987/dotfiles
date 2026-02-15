@@ -1,8 +1,7 @@
 ---
 paths:
   - "**/*.R"
-  - "Figures/**/*.R"
-  - "scripts/**/*.R"
+  - "**/*.r"
 ---
 
 # R Code Standards
@@ -19,7 +18,7 @@ Every script MUST follow this section layout:
 
 ```r
 # ==============================================================================
-# [Lecture N]: [Descriptive Title]
+# [Descriptive Title]
 # ==============================================================================
 #
 # Author:   [Your Name]
@@ -29,9 +28,9 @@ Every script MUST follow this section layout:
 #   [2-4 sentence description]
 #
 # Inputs:
-#   - [data source or URL]
+#   - [data source, path, or URL]
 #
-# Outputs (saved to Figures/LectureN/):
+# Outputs:
 #   - [file.pdf]  -- [description]
 #   - [file.rds]  -- [description]
 #
@@ -39,7 +38,17 @@ Every script MUST follow this section layout:
 # ==============================================================================
 ```
 
-Numbered sections: 0. Setup, 1. Data/DGP, 2. Estimation, 3. Run, 4. Figures, 5. Export
+### Section Markers
+
+Use all-caps section headers with trailing dashes to ~75 characters:
+
+```r
+# PREAMBLE ----------------------------------------------------------------
+# LOAD DATA ---------------------------------------------------------------
+# ESTIMATION --------------------------------------------------------------
+# FIGURES -----------------------------------------------------------------
+# EXPORT ------------------------------------------------------------------
+```
 
 ## 2. Console Output Policy
 
@@ -51,81 +60,152 @@ Numbered sections: 0. Setup, 1. Data/DGP, 2. Estimation, 3. Run, 4. Figures, 5. 
 ## 3. Reproducibility
 
 - `set.seed()` called ONCE at top (YYYYMMDD format)
-- All packages loaded at top via pacman package (ensure it is installed also using require)
-- All paths relative to repository root
+- All packages loaded at top via `pacman::p_load()`:
+
+```r
+if (!require("pacman")) install.packages("pacman")
+
+pacman::p_load(
+  tidyverse,
+  estimatr,
+  labelled,
+  haven,
+  knitr, kableExtra,
+  modelsummary
+)
+```
+
+- All paths relative to project root (Quarto uses `execute-dir: project`)
 - `dir.create(..., recursive = TRUE)` for output directories
 
 ## 4. Function Design
 
 - `snake_case` naming, verb-noun pattern
-- Roxygen-style documentation
+- Roxygen-style documentation (`#'` with `@param`, `@return`, `@examples`)
 - Default parameters, no magic numbers
 - Named return values (lists or tibbles)
 
 ## 5. Domain Correctness
 
-<!-- Customize for your field's known pitfalls -->
-- Verify estimator implementations match slide formulas
-- Check known package bugs (document in Section 12 below)
+- Verify estimator implementations match formulas in paper/slides
+- Use `estimatr::lm_robust()` with `se_type = "HC2"` for treatment effect estimation
+- Check CLAUDE.md for known package pitfalls specific to the project
 
 ## 6. Visual Identity
 
+### Color Palettes
+
 ```r
-# --- Your institutional palette ---
-# Gruvbox flat light theme colors
-primary_blue  <- "#076678"  # gruvbox bright blue
-primary_gold  <- "#d79921"  # gruvbox bright yellow
-accent_gray   <- "#7c6f64"  # gruvbox gray
-positive_green <- "#79740e"  # gruvbox bright green
-negative_red  <- "#cc241d"  # gruvbox bright red
+# Primary: ggsci cosmic palette
+pal <- ggsci::pal_cosmic(alpha = 1, palette = "signature_substitutions")
+
+# Secondary: ggsci AAAS palette
+pal_alt <- ggsci::pal_aaas(alpha = 1)
+
+# Tertiary: RColorBrewer Dark2
+pal_dark2 <- RColorBrewer::brewer.pal(name = "Dark2", n = 8)[c(2, 8, 1, 3:7)]
 ```
 
 ### Custom Theme
 
 ```r
-theme_custom <- function(base_size = 14) {
-  theme_minimal(base_size = base_size) +
-    theme(
-      plot.title = element_text(face = "bold", color = primary_blue),
-      legend.position = "bottom"
-    )
-}
+base_size <- 16
+base_family <- "palatino"
+
+plot_theme <-
+  hrbrthemes::theme_ipsum_rc(
+    base_family = base_family,
+    strip_text_face = "bold",
+    axis_title_just = "center",
+    axis_title_size = base_size,
+    axis_title_face = "bold",
+    caption_size = base_size - 3,
+    caption_face = "italic",
+    caption_family = base_family
+  ) +
+  ggplot2::theme(
+    legend.title = element_blank(),
+    axis.text.x = element_text(face = "bold"),
+    axis.text.y = element_text(face = "bold"),
+    legend.text = element_text(face = "bold", size = base_size),
+    legend.position = "bottom"
+  )
 ```
 
-### Figure Dimensions for Beamer
+Font rendering requires `showtext::showtext_auto()` before any plotting.
+
+### Figure Dimensions
 
 ```r
-ggsave(filepath, width = 12, height = 5, bg = "transparent")
+ggsave(filepath, width = 12, height = 5)
 ```
 
-## 7. RDS Data Pattern
+Always specify explicit `width` and `height` in `ggsave()`.
 
-**Heavy computations saved as RDS; slide rendering loads pre-computed data.**
+## 7. Tables
+
+### kable + kableExtra Pipeline
 
 ```r
-saveRDS(result, file.path(out_dir, "descriptive_name.rds"))
+knitr::kable(
+  df,
+  format = "latex",       # or "html"
+  booktabs = TRUE,
+  col.names = names(df),
+  align = "lcccc",
+  digits = 2,
+  linesep = ""
+) |>
+  kableExtra::kable_classic(latex_options = c("HOLD_position"), font_size = 11) |>
+  kableExtra::column_spec(1, bold = TRUE, width = "8em") |>
+  kableExtra::footnote(
+    general = "Note text here",
+    escape = FALSE,
+    fixed_small_size = FALSE,
+    threeparttable = TRUE
+  )
 ```
 
-## 8. Code Quality Checklist
+Use `modelsummary` for regression tables with custom `gof_map` and `coef_map`.
+
+## 8. RDS Data Pattern
+
+**Heavy computations saved as RDS; rendering loads pre-computed data.**
+
+```r
+readr::write_rds(result, file.path(out_dir, "descriptive_name.rds"))
+# Load with: readr::read_rds(path)
+```
+
+## 9. Code Style
+
+- 2-space indentation (no tabs)
+- Prefer native pipe `|>` in new code; `%>%` acceptable in existing code
+- Lines under 100 characters where possible
+- Consistent spacing around operators
+- No legacy patterns: always `TRUE`/`FALSE`, never `T`/`F`
+
+## 10. Code Quality Checklist
 
 ```
 [ ] Header with all fields
-[ ] Numbered sections
-[ ] Packages at top via pacman package
+[ ] Section markers (ALL-CAPS with dashes)
+[ ] Packages at top via pacman::p_load()
 [ ] set.seed() once at top
-[ ] All paths relative
-[ ] Functions documented
+[ ] All paths relative to project root
+[ ] Functions documented with Roxygen
 [ ] No cat/print output
-[ ] Figures: transparent bg, explicit dimensions
-[ ] RDS: every computed object saved
+[ ] Figures: explicit dimensions, project palette/theme
+[ ] RDS: computed objects saved for downstream use
 [ ] Comments explain WHY not WHAT
 ```
 
-## 9. Common Pitfalls
+## 11. Common Pitfalls
 
-<!-- Add your field-specific pitfalls here -->
 | Pitfall | Impact | Prevention |
 |---------|--------|------------|
-| Missing `bg = "transparent"` | White boxes on slides | Always include in ggsave() |
-| `cat()` for status | Noisy stdout | Use message() sparingly |
-| Hardcoded paths | Breaks on other machines | Use relative paths |
+| `cat()` for status | Noisy stdout | Use `message()` sparingly |
+| Hardcoded absolute paths | Breaks portability | Use paths relative to project root |
+| Missing `showtext_auto()` | Fonts don't render in plots | Call before any plotting |
+| Wrong SE type | Invalid inference | Use `se_type = "HC2"` by default |
+| Mixed pipe styles | Inconsistent code | Prefer `\|>` in new code |

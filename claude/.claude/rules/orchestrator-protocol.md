@@ -58,6 +58,7 @@ Select review agents based on **file types touched during implementation**:
 | `.R` scripts | r-reviewer | Yes (with others) |
 | TikZ content present | tikz-reviewer | Yes (with others) |
 | Domain-critical content | domain-reviewer (if configured) | Yes (with others) |
+| Data files present or created | pii-reviewer | Yes (with others) |
 
 **Run independent agents in parallel.** The quarto-critic runs after the parallel batch because it needs their context. If the quarto-critic finds issues, invoke quarto-fixer and re-run quarto-critic (up to 5 sub-rounds within the main loop).
 

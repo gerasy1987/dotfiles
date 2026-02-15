@@ -1,41 +1,42 @@
 ---
 name: compile-latex
-description: Compile a Beamer LaTeX slide deck with XeLaTeX (3 passes + bibtex). Use when compiling lecture slides.
+description: Compile a LaTeX document with XeLaTeX (3 passes + bibtex). Use when compiling LaTeX slides or papers.
 disable-model-invocation: true
-argument-hint: "[filename without .tex extension]"
+argument-hint: "[filename with or without .tex extension]"
 ---
 
-# Compile Beamer LaTeX Slides
+# Compile LaTeX Document
 
-Compile a Beamer slide deck using XeLaTeX with full citation resolution.
+Compile a LaTeX document using XeLaTeX with full citation resolution.
 
 ## Steps
 
-1. **Navigate to Slides/ directory** and compile with 3-pass sequence:
+1. **Read CLAUDE.md** to find:
+   - LaTeX source directory and any required environment variables (TEXINPUTS, BIBINPUTS)
+   - Compilation commands specific to this project
+   - Bibliography file locations
 
+2. **Compile with 3-pass sequence** (from the appropriate directory):
+
+**Default (xelatex + bibtex):**
 ```bash
-cd Slides
-TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode $ARGUMENTS.tex
-BIBINPUTS=..:$BIBINPUTS bibtex $ARGUMENTS
-TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode $ARGUMENTS.tex
-TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode $ARGUMENTS.tex
+xelatex -interaction=nonstopmode $ARGUMENTS.tex
+bibtex $ARGUMENTS
+xelatex -interaction=nonstopmode $ARGUMENTS.tex
+xelatex -interaction=nonstopmode $ARGUMENTS.tex
 ```
 
-**Alternative (latexmk):**
+**Preferred alternative (latexmk):**
 ```bash
-cd Slides
-TEXINPUTS=../Preambles:$TEXINPUTS BIBINPUTS=..:$BIBINPUTS latexmk -xelatex -interaction=nonstopmode $ARGUMENTS.tex
+latexmk -xelatex -interaction=nonstopmode $ARGUMENTS.tex
 ```
 
-2. **Check for warnings:**
+Set TEXINPUTS and BIBINPUTS as specified in CLAUDE.md before running.
+
+3. **Check for warnings:**
    - Grep output for `Overfull \\hbox` warnings
    - Grep for `undefined citations` or `Label(s) may have changed`
    - Report any issues found
-
-3. **Open the PDF** for visual verification:
-   ```bash
-   open Slides/$ARGUMENTS.pdf
-   ```
 
 4. **Report results:**
    - Compilation success/failure
@@ -51,5 +52,5 @@ TEXINPUTS=../Preambles:$TEXINPUTS BIBINPUTS=..:$BIBINPUTS latexmk -xelatex -inte
 
 ## Important
 - **Always use XeLaTeX**, never pdflatex
-- **TEXINPUTS** is required: your Beamer theme lives in `Preambles/`
-- **BIBINPUTS** is required: your `.bib` file lives in the repo root
+- Check CLAUDE.md for project-specific TEXINPUTS and BIBINPUTS paths
+- If the project uses `latexmk` with a `latexmkrc`, prefer that over manual 3-pass

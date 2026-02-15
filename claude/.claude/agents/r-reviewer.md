@@ -15,8 +15,9 @@ Produce a thorough, actionable code review report. You do NOT edit files — you
 
 1. **Read the target script(s)** end-to-end
 2. **Read `.claude/rules/r-code-conventions.md`** for the current standards
-3. **Check every category below** systematically
-4. **Produce the report** in the format specified at the bottom
+3. **Read the project's `CLAUDE.md`** for project-specific conventions and known patterns
+4. **Check every category below** systematically
+5. **Produce the report** in the format specified at the bottom
 
 ---
 
@@ -24,10 +25,10 @@ Produce a thorough, actionable code review report. You do NOT edit files — you
 
 ### 1. SCRIPT STRUCTURE & HEADER
 - [ ] Header block present with: title, author, purpose, inputs, outputs
-- [ ] Numbered top-level sections (0. Setup, 1. Data/DGP, 2. Estimation, 3. Run, 4. Figures, 5. Export)
+- [ ] Section markers present (ALL-CAPS headers with trailing dashes, e.g., `# PREAMBLE ----`)
 - [ ] Logical flow: setup → data → computation → visualization → export
 
-**Flag:** Missing header fields, unnumbered sections, inconsistent divider style.
+**Flag:** Missing header fields, missing section markers, inconsistent divider style.
 
 ### 2. CONSOLE OUTPUT HYGIENE
 - [ ] `message()` used sparingly — one per major section maximum
@@ -39,18 +40,18 @@ Produce a thorough, actionable code review report. You do NOT edit files — you
 
 ### 3. REPRODUCIBILITY
 - [ ] `set.seed()` called ONCE at the top of the script (never inside loops/functions)
-- [ ] All packages loaded at top via `library()` (not `require()`)
-- [ ] All paths relative to repository root
-- [ ] Output directory created with `dir.create(..., recursive = TRUE)`
-- [ ] No hardcoded absolute paths
+- [ ] All packages loaded at top via `pacman::p_load()` with auto-install guard: `if (!require("pacman")) install.packages("pacman")`
+- [ ] All paths relative to project root
+- [ ] Output directory created with `dir.create(..., recursive = TRUE)` if needed
+- [ ] No hardcoded absolute paths (except Overleaf/Dropbox paths documented in CLAUDE.md)
 - [ ] Script runs cleanly from `Rscript` on a fresh clone
 
-**Flag:** Multiple `set.seed()` calls, `require()` usage, absolute paths, missing `dir.create()`.
+**Flag:** Multiple `set.seed()` calls, `library()` without pacman pattern, absolute paths not documented in CLAUDE.md, missing `dir.create()`.
 
 ### 4. FUNCTION DESIGN & DOCUMENTATION
 - [ ] All functions use `snake_case` naming
-- [ ] Verb-noun pattern (e.g., `run_simulation`, `generate_dgp`, `compute_effect`)
-- [ ] Every non-trivial function has roxygen-style documentation
+- [ ] Verb-noun pattern (e.g., `run_simulation`, `get_estimates`, `select_covariates`)
+- [ ] Every non-trivial function has roxygen-style documentation (`#'` with `@param`, `@return`)
 - [ ] Default parameters for all tuning values
 - [ ] No magic numbers inside function bodies
 - [ ] Return values are named lists or tibbles (not unnamed vectors)
@@ -58,35 +59,34 @@ Produce a thorough, actionable code review report. You do NOT edit files — you
 **Flag:** Undocumented functions, magic numbers, unnamed return values, code duplication.
 
 ### 5. DOMAIN CORRECTNESS
-<!-- Customize this section for your field -->
-- [ ] Estimator implementations match the formulas shown on slides
-- [ ] Standard errors use the appropriate method
-- [ ] DGP specifications in simulations match the paper being replicated
-- [ ] Treatment effects are the correct estimand (e.g., ATT vs ATE)
-- [ ] Check `.claude/rules/r-code-conventions.md` for known pitfalls
+- [ ] Estimator implementations match the formulas in the paper or slides
+- [ ] Standard errors use the correct method (default: `estimatr::lm_robust()` with `se_type = "HC2"`)
+- [ ] Treatment effects are the correct estimand (ITT vs LATE, ATE vs ATT)
+- [ ] Covariate adjustment follows pre-registration specifications
+- [ ] Check `.claude/rules/r-code-conventions.md` and CLAUDE.md for known pitfalls
 
-**Flag:** Implementation doesn't match theory, wrong estimand, known bugs.
+**Flag:** Implementation doesn't match theory, wrong estimand, wrong SE type, known bugs.
 
 ### 6. FIGURE QUALITY
-- [ ] Consistent color palette (check your project's standard colors)
-- [ ] Custom theme applied to all plots
-- [ ] Transparent background for Beamer figures: `bg = "transparent"`
+- [ ] Project color palette used (`ggsci::pal_cosmic()` primary, `ggsci::pal_aaas()` secondary, or as specified in CLAUDE.md)
+- [ ] Project theme applied: `hrbrthemes::theme_ipsum_rc()` with Palatino font (or as specified in CLAUDE.md)
+- [ ] `showtext::showtext_auto()` called before plotting (for font rendering)
 - [ ] Explicit dimensions in `ggsave()`: `width`, `height` specified
-- [ ] Axis labels: sentence case, no abbreviations, units included
+- [ ] Axis labels: clear, no abbreviations, units included where relevant
 - [ ] Legend position: bottom, readable at projection size
 - [ ] Font sizes readable when projected (base_size >= 14)
 - [ ] No default ggplot2 colors leaking through
 
-**Flag:** Missing transparent bg, default colors, hard-to-read fonts, missing dimensions.
+**Flag:** Wrong palette/theme, missing `showtext_auto()`, default colors, hard-to-read fonts, missing dimensions.
 
 ### 7. RDS DATA PATTERN
-- [ ] Every computed object has a corresponding `saveRDS()` call
+- [ ] Computed objects saved with `readr::write_rds()` or `saveRDS()`
 - [ ] RDS filenames are descriptive
-- [ ] Both raw results AND summary tables saved
+- [ ] Both raw results AND summary tables saved where appropriate
 - [ ] File paths use `file.path()` for cross-platform compatibility
-- [ ] Missing `saveRDS()` means Quarto slides can't render — flag as HIGH severity
+- [ ] Missing RDS saves for objects referenced by downstream documents — flag as HIGH severity
 
-**Flag:** Missing `saveRDS()` for any object referenced by slides.
+**Flag:** Missing saves for any object referenced by Quarto documents or paper scripts.
 
 ### 8. COMMENT QUALITY
 - [ ] Comments explain **WHY**, not WHAT
@@ -97,10 +97,10 @@ Produce a thorough, actionable code review report. You do NOT edit files — you
 **Flag:** WHAT-comments, dead code, missing WHY-explanations for non-obvious logic.
 
 ### 9. ERROR HANDLING & EDGE CASES
-- [ ] Simulation results checked for `NA`/`NaN`/`Inf` values
-- [ ] Failed replications counted and reported
+- [ ] Results checked for `NA`/`NaN`/`Inf` values
+- [ ] Failed computations counted and reported
 - [ ] Division by zero guarded where relevant
-- [ ] Parallel backend registered AND unregistered
+- [ ] Parallel backend registered AND unregistered (if using parallel processing)
 
 **Flag:** No NA handling, unregistered parallel backends, memory risks.
 
@@ -108,10 +108,10 @@ Produce a thorough, actionable code review report. You do NOT edit files — you
 - [ ] Consistent indentation (2 spaces, no tabs)
 - [ ] Lines under 100 characters where possible
 - [ ] Consistent spacing around operators
-- [ ] Pipe style consistent: either `%>%` or `|>`, not mixed
+- [ ] Pipe style consistent: prefer `|>` in new code; `%>%` acceptable in existing code but not mixed
 - [ ] No legacy R patterns (`T`/`F` instead of `TRUE`/`FALSE`)
 
-**Flag:** Inconsistent style, legacy patterns, mixed pipe styles.
+**Flag:** Inconsistent style, legacy patterns, mixed pipe styles within the same file.
 
 ---
 
@@ -170,4 +170,4 @@ Save report to `quality_reports/[script_name]_r_review.md`:
 2. **Be specific.** Include line numbers and exact code snippets.
 3. **Be actionable.** Every issue must have a concrete proposed fix.
 4. **Prioritize correctness.** Domain bugs > style issues.
-5. **Check Known Pitfalls.** See `.claude/rules/r-code-conventions.md` for project-specific bugs.
+5. **Check Known Pitfalls.** See `.claude/rules/r-code-conventions.md` and CLAUDE.md for project-specific conventions.
