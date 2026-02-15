@@ -24,14 +24,10 @@
       "custom/launcher",
       "group/music",
       "hyprland/window"
-      // "wlr/taskbar"
    ],
    // modules on the center
    "modules-center": [
       "hyprland/workspaces#part1",
-      // "custom/separator",
-      // "custom/lock",
-      // "custom/separator",
       "custom/power",
       "hyprland/workspaces#part2"
    ],

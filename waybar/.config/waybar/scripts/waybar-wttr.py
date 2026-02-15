@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import json
+import os
 from datetime import datetime
 
 import requests
@@ -58,8 +59,18 @@ WEATHER_CODES = {
 
 data = {}
 
+# Get weather location from environment variable (default: Nashville)
+# Set with: export WAYBAR_WEATHER_LOCATION="YourCity"
+location = os.getenv("WAYBAR_WEATHER_LOCATION", "Nashville")
 
-weather = requests.get("https://wttr.in/Nashville?format=j1").json()
+try:
+    weather = requests.get(f"https://wttr.in/{location}?format=j1", timeout=5).json()
+except Exception as e:
+    # Fallback when API fails or network unavailable
+    data["text"] = "N/A"
+    data["tooltip"] = "Weather unavailable"
+    print(json.dumps(data))
+    exit(0)
 
 
 def format_time(time):
@@ -89,42 +100,47 @@ def format_chances(hour):
     return ", ".join(conditions)
 
 
-tempint = int(weather["current_condition"][0]["temp_C"])
-extrachar = ""
-if tempint > 0 and tempint < 10:
-    extrachar = "+"
+try:
+    tempint = int(weather["current_condition"][0]["temp_C"])
+    extrachar = ""
+    if tempint > 0 and tempint < 10:
+        extrachar = "+"
 
+    data["text"] = (extrachar
+        + weather["current_condition"][0]["temp_C"]
+        + "°" +
+        WEATHER_CODES[weather["current_condition"][0]["weatherCode"]]
+    )
 
-data["text"] = (extrachar
-    + weather["current_condition"][0]["temp_C"]
-    + "°" +
-    WEATHER_CODES[weather["current_condition"][0]["weatherCode"]]
-)
-
-data["tooltip"] = (
-    f"<b>{weather['current_condition'][0]['weatherDesc'][0]['value']} {weather['current_condition'][0]['temp_C']}°</b>\n"
-)
-data["tooltip"] += f"Feels like: {weather['current_condition'][0]['FeelsLikeC']}°\n"
-data["tooltip"] += f"Wind: {weather['current_condition'][0]['windspeedKmph']}Km/h\n"
-data["tooltip"] += f"Humidity: {weather['current_condition'][0]['humidity']}%\n"
-for i, day in enumerate(weather["weather"]):
-    data["tooltip"] += "\n<b>"
-    if i == 0:
-        data["tooltip"] += "Today, "
-    if i == 1:
-        data["tooltip"] += "Tomorrow, "
-    data["tooltip"] += f"{day['date']}</b>\n"
-    data["tooltip"] += f"⬆️ {day['maxtempC']}° ⬇️ {day['mintempC']}° "
-    data[
-        "tooltip"
-    ] += f"🌅 {day['astronomy'][0]['sunrise']} 🌇 {day['astronomy'][0]['sunset']}\n"
-    for hour in day["hourly"]:
+    data["tooltip"] = (
+        f"<b>{weather['current_condition'][0]['weatherDesc'][0]['value']} {weather['current_condition'][0]['temp_C']}°</b>\n"
+    )
+    data["tooltip"] += f"Feels like: {weather['current_condition'][0]['FeelsLikeC']}°\n"
+    data["tooltip"] += f"Wind: {weather['current_condition'][0]['windspeedKmph']}Km/h\n"
+    data["tooltip"] += f"Humidity: {weather['current_condition'][0]['humidity']}%\n"
+    for i, day in enumerate(weather["weather"]):
+        data["tooltip"] += "\n<b>"
         if i == 0:
-            if int(format_time(hour["time"])) < datetime.now().hour - 2:
-                continue
+            data["tooltip"] += "Today, "
+        if i == 1:
+            data["tooltip"] += "Tomorrow, "
+        data["tooltip"] += f"{day['date']}</b>\n"
+        data["tooltip"] += f"⬆️ {day['maxtempC']}° ⬇️ {day['mintempC']}° "
         data[
             "tooltip"
-        ] += f"{format_time(hour['time'])} {WEATHER_CODES[hour['weatherCode']]} {format_temp(hour['tempC'])} {hour['weatherDesc'][0]['value']}, {format_chances(hour)}\n"
+        ] += f"🌅 {day['astronomy'][0]['sunrise']} 🌇 {day['astronomy'][0]['sunset']}\n"
+        for hour in day["hourly"]:
+            if i == 0:
+                if int(format_time(hour["time"])) < datetime.now().hour - 2:
+                    continue
+            data[
+                "tooltip"
+            ] += f"{format_time(hour['time'])} {WEATHER_CODES[hour['weatherCode']]} {format_temp(hour['tempC'])} {hour['weatherDesc'][0]['value']}, {format_chances(hour)}\n"
 
+    print(json.dumps(data))
 
-print(json.dumps(data))
+except (KeyError, ValueError, TypeError) as e:
+    # Fallback when JSON parsing fails
+    data["text"] = "N/A"
+    data["tooltip"] = "Weather data error"
+    print(json.dumps(data))
