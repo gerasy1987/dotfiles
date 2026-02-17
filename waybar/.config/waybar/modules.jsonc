@@ -88,16 +88,24 @@
       "on-click": "wlogout -b 5",
       "tooltip": "false"
    },
-   // STANDALONE NETWORK
-   "network": {
-      "format-wifi": "{essid} ",
-      "format-ethernet": "{ipaddr} 󰈀",
-      "format-disconnected": "Offline ⚠",
-      "max-length": 12,
-      "tooltip-format-wifi": "{essid}\n{ifname}: {ipaddr}/{cidr}\nStrength: {signalStrength}%\nUp: {bandwidthUpBytes} Down: {bandwidthDownBytes}",
-      "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}\nUp: {bandwidthUpBytes} Down: {bandwidthDownBytes}",
-      "tooltip-format-disconnected": "Network disconnected",
-      "interval": 5
+  //  // STANDALONE NETWORK
+  //  "network": {
+  //     "format-wifi": "󰤨",
+  //     "format-ethernet": "󰈀",
+  //     "format-disconnected": "⚠",
+  //     // "max-length": 12,
+  //     "tooltip-format-wifi": "{essid}\n{ifname}: {ipaddr}/{cidr}\nStrength: {signalStrength}%\nUp: {bandwidthUpBytes} Down: {bandwidthDownBytes}",
+  //     "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}\nUp: {bandwidthUpBytes} Down: {bandwidthDownBytes}",
+  //     "tooltip-format-disconnected": "Network disconnected",
+  //     "interval": 5
+  //  },
+   // VPN STATUS module
+   "custom/vpn": {
+      "format": "{}",
+      "return-type": "json",
+      "exec": "$HOME/.config/waybar/scripts/vpn-status.sh",
+      "interval": 10,
+      "on-click": "$HOME/.config/waybar/scripts/vpn-toggle.sh"
    },
    // MUSIC GROUP
    // EXPANDOR for music
@@ -296,6 +304,7 @@
       "format-on": "󰂯",
       "format-off": "BT-off",
       "format-disabled": "󰂲",
+      "format-connected": "󰂯",
       "format-connected-battery": "󰂯",
       "tooltip": true,
       // "format-alt": "{device_alias} {device_battery_percentage}% 󰂯",
@@ -442,7 +451,7 @@
       },
       "modules": [
          "custom/expands",
-         "network",
+        //  "network",
          "disk",
          "cpu",
          "memory",
@@ -452,6 +461,7 @@
          "custom/gpu_switcher",
          "custom/hyprsunset",
          "idle_inhibitor",
+         "custom/vpn",
          "tray"
       ]
    }

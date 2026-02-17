@@ -1,12 +1,7 @@
 #! /bin/bash
 
-# Check if playerctl is available and has active players
+# Check if playerctl is available
 if ! command -v playerctl >/dev/null 2>&1; then
-   exit 0
-fi
-
-# Check if any player is available
-if ! playerctl status >/dev/null 2>&1; then
    exit 0
 fi
 

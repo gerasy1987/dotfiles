@@ -322,6 +322,9 @@ button:hover {
    padding-left: 4px;
    padding-right: 4px;
 }
+#bluetooth.connected {
+   color: #83a598;
+}
 
 
 /* TODAY */
@@ -478,4 +481,16 @@ button:hover {
 #network.disconnected {
    color: #fb4934;
    opacity: 0.8;
+}
+
+#custom-vpn {
+   background: transparent;
+   margin-left: 2px;
+   margin-right: 4px;
+   color: #ebdbb2;
+   opacity: 0.6;
+}
+#custom-vpn.connected {
+   color: #b8bb26;
+   opacity: 1;
 }
