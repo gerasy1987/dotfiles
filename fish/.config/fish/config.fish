@@ -2,6 +2,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+# Homebrew PATH (Apple Silicon)
+fish_add_path /opt/homebrew/bin /opt/homebrew/sbin≈
+
 starship init fish | source
 fish_add_path /home/zhora/.local/bin
 fish_add_path /home/zhora/.cargo/bin/
