@@ -16,12 +16,7 @@
       "Bash(gh pr *)",
       "Bash(gh run *)",
       "Bash(gh api *)",
-      "Bash(gh pr list *)",
-      "Bash(gh pr view *)",
-      "Bash(gh pr merge *)",
-      "Bash(gh pr create *)",
       "Bash(gh repo *)",
-
       "Bash(xelatex *)",
       "Bash(TEXINPUTS=*)",
       "Bash(BIBINPUTS=*)",
@@ -29,12 +24,9 @@
       "Bash(bibtex *)",
       "Bash(pdfinfo *)",
       "Bash(pdf2svg *)",
-
       "Bash(quarto render *)",
-
       "Bash(Rscript *)",
       "Bash(python3 *)",
-
       "Bash(./scripts/sync_to_docs.sh *)",
       "Bash(./scripts/sync_to_docs.sh)",
       "Bash(chmod *)",
@@ -45,20 +37,36 @@
       "Bash(for *)",
       "Bash(gs *)",
       "Bash(pdftk *)",
-      "Bash(mkdir *)"
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(pdftotext *)"
     ]
   },
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/gerasy/.claude/hooks/pdf-to-text.sh",
+            "timeout": 30000
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "hooks": [
           {
             "type": "prompt",
-            "prompt": "Review the conversation transcript. This project requires that ALL outputs are verified before completion: LaTeX must compile, Quarto must render, images must display, SVGs must contain valid XML. Check if Claude verified its work during this response. If verification was NOT performed and the task involved creating or modifying .tex, .qmd, .R, or .svg files, respond with {\"ok\": false, \"reason\": \"Verification not performed. Please compile/render the modified files and verify output before finishing.\"}. If verification was done, or the task did not involve these file types, or the task was purely informational/planning, respond with {\"ok\": true}.",
-            "timeout": 30
+            "prompt": "Check ONLY the tool calls in this turn (not the full history). Did Claude edit or write any .tex, .qmd, .R, or .svg file AND then fail to compile/render it? If yes: {\"ok\": false, \"reason\": \"Verify: compile/render the modified files.\"}. If no such files were touched, or verification was done, or the task was informational: {\"ok\": true}.",
+            "timeout": 15
           }
         ]
       }
     ]
-  }
+  },
+  "effortLevel": "max"
 }
