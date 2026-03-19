@@ -217,6 +217,7 @@
    // SETTINGS GROUP
    // BATTERY module
    "battery": {
+      "bat": "BAT0",
       "interval": 30,
       "states": {
          "full": 100,
