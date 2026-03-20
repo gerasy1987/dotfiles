@@ -50,7 +50,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/gerasy/.claude/hooks/pdf-to-text.sh",
+            "command": "~/.claude/hooks/pdf-to-text.sh",
             "timeout": 30000
           }
         ]
