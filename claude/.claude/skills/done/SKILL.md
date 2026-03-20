@@ -26,19 +26,26 @@ Do NOT extract:
 
 ## How to persist
 
-### Step 1: Determine the memory directory
+### Step 1: Determine scope — global vs project
 
-The memory directory is project-scoped. Find it by checking the `$CLAUDE_PROJECT_DIR` or by locating the nearest `.claude/` project config directory. The memory path follows the pattern:
+Each memory has a **scope**. Choose based on whether the learning applies to this project only or across all projects:
 
-```
-~/.claude/projects/<project-key>/memory/
-```
+| Scope | Directory | When to use |
+|-------|-----------|-------------|
+| **Global** | `~/.claude/memory/` | Coding style, language preferences, general workflow habits, user profile traits that don't change per project |
+| **Project** | `~/.claude/projects/<project-key>/memory/` | Project-specific decisions, architecture context, deadlines, project-specific conventions, references to project tooling |
 
-Read the existing `MEMORY.md` in that directory (if it exists) to understand what's already stored.
+**Rules of thumb:**
+- If the user corrects your **coding style** (formatting, naming, idioms) → **global** (they'll want this everywhere)
+- If the user corrects your **approach to a specific task type** in this codebase → **project**
+- If the user states a **general preference** ("I prefer X", "don't do Y") with no project qualifier → **global**
+- If in doubt, ask the user: "Should this apply to all projects or just this one?"
+
+Read the existing `MEMORY.md` in **both** directories (if they exist) to understand what's already stored and avoid duplicates.
 
 ### Step 2: Create or update individual memory files
 
-For each new piece of information worth saving, either **update an existing memory file** (if the topic overlaps) or **create a new one**.
+For each new piece of information worth saving, either **update an existing memory file** (if the topic overlaps) or **create a new one**. Write the file to the appropriate scope directory determined in Step 1.
 
 Each memory file uses this format:
 
@@ -59,12 +66,17 @@ For `feedback` and `project` types, structure the content as:
 
 File naming: use lowercase, hyphens, descriptive names like `feedback_no-trailing-summaries.md`, `user_role.md`, `project_merge-freeze.md`.
 
-### Step 3: Update MEMORY.md index
+### Step 3: Update MEMORY.md indexes
 
-`MEMORY.md` is an index only — it contains links to memory files with brief descriptions, not memory content itself. Keep it under 200 lines. Format:
+Each scope has its own `MEMORY.md` index. Update whichever index corresponds to the files you created/modified.
+
+- **Global index:** `~/.claude/memory/MEMORY.md` (title: `# MEMORY — Global`)
+- **Project index:** `~/.claude/projects/<project-key>/memory/MEMORY.md` (title: `# MEMORY — <Project Name>`)
+
+`MEMORY.md` is an index only — it contains links to memory files with brief descriptions, not memory content itself. Keep each under 200 lines. Format:
 
 ```markdown
-# MEMORY — <Project Name>
+# MEMORY — <Global or Project Name>
 
 ## User
 - [user_role.md](user_role.md) — User's role and expertise
@@ -78,6 +90,8 @@ File naming: use lowercase, hyphens, descriptive names like `feedback_no-trailin
 
 Group entries by type. Add new entries; do not remove existing ones unless they're clearly outdated (in which case, also delete the file).
 
+**Important:** Do not duplicate memories across scopes. If a memory is global, it should only appear in the global index. If project-scoped, only in the project index.
+
 ### Step 4: Update CLAUDE.md (if warranted)
 
 If this session produced learnings that should govern **all future Claude sessions in this project** (not just inform — govern), update the project's `CLAUDE.md`. Examples:
@@ -90,7 +104,7 @@ Read the existing CLAUDE.md first. Only append to relevant sections — don't re
 ## Output
 
 After updating files, print a brief summary:
-- What memories were created/updated (with file paths)
+- What memories were created/updated, noting their **scope** (global vs project) and file paths
 - What was added to CLAUDE.md (if anything)
 - A one-line summary of the session for the user's reference
 
