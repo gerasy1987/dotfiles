@@ -238,6 +238,15 @@
          "󰁹"
       ]
    },
+   // CLAUDEBAR module
+   "custom/claudebar": {
+      "exec": "claudebar --format '{session_pct}%' --icon \"<span font='Font Awesome 7 Brands'>&#xe861;</span>\" --color-low '#b8bb26' --color-mid '#fabd2f' --color-high '#fe8019' --color-critical '#fb4934' ",
+      "return-type": "json",
+      "interval": 300,
+      "signal": 13,
+      "tooltip": true,
+      "on-click": "xdg-open https://claude.ai/settings/usage"
+   },
    // LANGUAGE module
    "hyprland/language": {
       "format-en": "🗽",
@@ -324,6 +333,7 @@
          "pulseaudio",
          "backlight",
          "battery",
+         "custom/claudebar",
          "hyprland/language"
       ]
    },

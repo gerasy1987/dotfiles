@@ -237,6 +237,13 @@ button:hover {
    padding-bottom: 0px;
 }
 
+#custom-claudebar {
+   background-color: transparent;
+   color: #ebdbb2;
+   padding-left: 4px;
+   padding-right: 4px;
+}
+
 #language {
    /* border-radius: 10px; */
    padding-left: 4px;
