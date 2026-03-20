@@ -204,7 +204,6 @@ readr::write_rds(result, file.path(out_dir, "descriptive_name.rds"))
 
 | Pitfall | Impact | Prevention |
 |---------|--------|------------|
-| `cat()` for status | Noisy stdout | Use `message()` sparingly |
 | Hardcoded absolute paths | Breaks portability | Use paths relative to project root |
 | Missing `showtext_auto()` | Fonts don't render in plots | Call before any plotting |
 | Wrong SE type | Invalid inference | Use `se_type = "HC2"` by default |

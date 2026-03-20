@@ -1,6 +1,8 @@
 ---
-paths:
-  - "**/*.R"
+name: replicate
+description: Replicate a paper's results before extending. Guides the inventory, translation, verification, and extension workflow for replication packages.
+disable-model-invocation: true
+argument-hint: "[Paper name or replication package path]"
 ---
 
 # Replication-First Protocol
@@ -65,8 +67,6 @@ When translating code (typically Stata to R):
 5. **Execute and capture outputs**
 
 ### Common Stata to R Translation Pitfalls
-
-<!-- Customize: Add pitfalls specific to your field's common packages -->
 
 | Stata | R | Trap |
 |-------|---|------|

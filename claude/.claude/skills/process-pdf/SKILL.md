@@ -1,6 +1,8 @@
 ---
-paths:
-  - "**/*.pdf"
+name: process-pdf
+description: Safely process large PDFs by splitting into chunks, extracting text, and reading progressively. Use when a PDF is too large to read directly.
+disable-model-invocation: true
+argument-hint: "[PDF filename]"
 ---
 
 # Robust PDF Processing Best Practices

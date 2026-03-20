@@ -79,7 +79,7 @@ Provide a **verdict**:
 
 ## Reference
 
-Read `.claude/rules/tikz-visual-quality.md` for the full specification of:
+Read `.claude/templates/tikz-visual-quality.md` for the full specification of:
 - Standard coordinates and scales
 - Color palette definitions
 - Label placement conventions

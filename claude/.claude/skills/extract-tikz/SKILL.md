@@ -61,4 +61,4 @@ cd ../..
 ### Step 7: Report results
 
 ## Source of Truth Reminder
-TikZ diagrams MUST be edited in the Beamer `.tex` file first, then copied verbatim to `extract_tikz.tex`. See `.claude/rules/single-source-of-truth.md`.
+TikZ diagrams MUST be edited in the source `.tex` or `.qmd` file first, then copied verbatim to `extract_tikz.tex`.
