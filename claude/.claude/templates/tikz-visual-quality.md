@@ -56,8 +56,6 @@ paths:
 [ ] Labels legible at presentation size
 ```
 
-## Single Source of Truth (CRITICAL)
+## Source File Discipline
 
-**The Beamer `.tex` file is the authoritative source for ALL TikZ diagrams.**
-
-Edit TikZ in the Beamer file FIRST, then copy verbatim to `extract_tikz.tex`.
+Edit TikZ in the source file (`.qmd` or `.tex`) FIRST, then copy verbatim to `extract_tikz.tex` if separate extraction is needed.

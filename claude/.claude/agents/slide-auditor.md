@@ -41,7 +41,7 @@ Audit every slide in the specified file for visual layout issues. Produce a repo
 - Missing standout/transition slides at major conceptual pivots
 - Missing framing sentences before formal definitions
 - Semantic colors not used on binary contrasts (e.g., "Correct" vs "Wrong")
-- Note: Check `.claude/rules/no-pause-beamer.md` for overlay command policy
+- Note: Check overlay/pause command usage for appropriateness
 
 ### ENVIRONMENT PARITY (Beamer → Quarto)
 - Every Beamer custom environment must have a corresponding CSS class in the QMD

@@ -1,5 +1,9 @@
 # MEMORY — Global
 
+## User
+
+- [user_qmd-first-workflow.md](user_qmd-first-workflow.md) — Transitioning from Beamer to QMD-first for slides; don't default to Beamer workflows
+
 ## Feedback
 
 - [feedback_tidyverse-style.md](feedback_tidyverse-style.md) — Use tibble, pipe-first style, kable(digits=) over manual round(); minimal formatting code
