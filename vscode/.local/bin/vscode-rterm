@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+set -eu
+
+if command -v radian >/dev/null 2>&1; then
+  exec radian "$@"
+fi
+
+if [ -x "$HOME/.local/bin/radian" ]; then
+  exec "$HOME/.local/bin/radian" "$@"
+fi
+
+if command -v R >/dev/null 2>&1; then
+  exec R "$@"
+fi
+
+printf '%s\n' 'Unable to find radian or R on PATH.' >&2
+exit 1

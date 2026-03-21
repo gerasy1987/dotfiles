@@ -19,6 +19,8 @@ Each top-level folder is a **stow package** that mirrors the target directory st
 | `cava` | Audio visualizer |
 | `kanshi` | Automatic display configuration |
 | `claude` | Claude Code configuration (agents, rules, skills) |
+| `vscode` | VS Code user settings, keybindings, and helper scripts |
+| `r` | Global R profile for VS Code session watcher and terminal width |
 
 ## Installation
 
@@ -61,6 +63,8 @@ To copy these dotfiles, I suggest to use [GNU Stow](https://www.gnu.org/software
    stow fish
    stow foot
    stow starship
+  stow vscode
+  stow r
    ```
    
    This will symlink the config files into your `$HOME` directory with correct relative paths.
@@ -104,6 +108,35 @@ claude/.claude/
 - **[Cursor](https://www.cursor.com)** is a VS Code wrapper (and replacement) designed to improve your coding efficiency with AI-powered code suggestions and completions.
 
 - **[Quarto in VS Code](https://quarto.org/docs/tools/vscode.html)** is as good as Quarto in RStudio with full support for chunk controls and visual editor.
+
+### Opinionated R Setup
+
+This repo now includes an R-focused VS Code package under `vscode/` plus a global `.Rprofile` under `r/`.
+
+After stowing those packages, finish the setup with:
+
+```sh
+~/.local/bin/vscode-r-extensions
+~/.local/bin/vscode-r-bootstrap
+```
+
+What this enables:
+
+- `radian` as the preferred R terminal inside VS Code, with fallback to plain `R`
+- `languageserver` for completion, hover, rename, diagnostics, and formatting
+- `httpgd` for the VS Code plot viewer
+- `lintr` and `styler` for diagnostics and formatting
+- `IRkernel` for Jupyter-backed R notebooks in VS Code
+- Quarto and R Markdown formatting-on-save plus chunk CodeLens
+- Global `.Rprofile` hooks so self-managed VS Code R sessions attach cleanly
+
+Recommended system packages on Arch before running the bootstrap script:
+
+```sh
+sudo pacman -S r jupyter-notebook python-pipx
+```
+
+The VS Code settings target `~/.config/Code/User`. If you use VSCodium or Code OSS instead, copy the same files to the matching user settings directory or tell me and I can add sibling packages for those targets too.
 
 - A list of useful VS Code packages:
 
