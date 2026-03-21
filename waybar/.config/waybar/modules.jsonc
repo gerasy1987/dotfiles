@@ -412,14 +412,14 @@
       "format": ""
    },
    // GPU SWITCHER module
-   "custom/gpu_switcher": {
-      "exec": "$HOME/.config/waybar/scripts/gpu-switcher.sh",
-      "return-type": "json",
-      "format": "{}",
-      "interval": 10,
-      "on-click": "$HOME/.config/waybar/scripts/gpu-mode-menu.sh",
-      "tooltip": true
-   },
+   // "custom/gpu_switcher": {
+   //    "exec": "$HOME/.config/waybar/scripts/gpu-switcher.sh",
+   //    "return-type": "json",
+   //    "format": "{}",
+   //    "interval": 10,
+   //    "on-click": "$HOME/.config/waybar/scripts/gpu-mode-menu.sh",
+   //    "tooltip": true
+   // },
    // expandor of additional group from left
    "custom/expands": {
       "format": "󰌢",
@@ -455,7 +455,7 @@
          "temperature",
          "custom/cliphist",
          "custom/keybindings",
-         "custom/gpu_switcher",
+         // "custom/gpu_switcher",
          "custom/hyprsunset",
          "idle_inhibitor",
          "tray"
