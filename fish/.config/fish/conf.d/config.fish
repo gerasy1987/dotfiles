@@ -37,12 +37,6 @@ alias bundle-build='bundle exec jekyll build'
 # get window class
 alias get-class='xprop | grep WM_CLASS'
 
-# get window class
-alias get-class='xprop | grep WM_CLASS'
-
-# get window class
-# alias xborders='~/Downloads/programs/xborder/xborders'
-
 # exa alias
 alias ll='exa -hl' 
 alias lg='exa --long --grid' 

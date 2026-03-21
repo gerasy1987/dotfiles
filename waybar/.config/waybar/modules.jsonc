@@ -82,30 +82,30 @@
       "icon": true,
       "icon-size": 20
    },
-   // // STANDALONE TASKBAR
-   // "wlr/taskbar": {
-   //    "format": "{icon}",
-   //    "icon-size": 18,
-   //    "tooltip-format": "{title}",
-   //    "on-click": "activate",
-   //    "on-click-middle": "close",
-   //    "ignore-list": [
-   //       "Alacritty",
-   //       "kitty"
-   //    ],
-   //    "app_ids-mapping": {
-   //       "firefoxdeveloperedition": "firefox-developer-edition"
-   //    },
-   //    "rewrite": {
-   //       "Firefox Web Browser": "Firefox",
-   //       "Foot Server": "Terminal"
-   //    }
-   // },
    // STANDALONE POWER
    "custom/power": {
       "format": "ВЫХОД",
       "on-click": "wlogout -b 5",
       "tooltip": "false"
+   },
+  //  // STANDALONE NETWORK
+  //  "network": {
+  //     "format-wifi": "󰤨",
+  //     "format-ethernet": "󰈀",
+  //     "format-disconnected": "⚠",
+  //     // "max-length": 12,
+  //     "tooltip-format-wifi": "{essid}\n{ifname}: {ipaddr}/{cidr}\nStrength: {signalStrength}%\nUp: {bandwidthUpBytes} Down: {bandwidthDownBytes}",
+  //     "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}\nUp: {bandwidthUpBytes} Down: {bandwidthDownBytes}",
+  //     "tooltip-format-disconnected": "Network disconnected",
+  //     "interval": 5
+  //  },
+   // VPN STATUS module
+   "custom/vpn": {
+      "format": "{}",
+      "return-type": "json",
+      "exec": "$HOME/.config/waybar/scripts/vpn-status.sh",
+      "interval": 10,
+      "on-click": "$HOME/.config/waybar/scripts/vpn-toggle.sh"
    },
    // MUSIC GROUP
    // EXPANDOR for music
@@ -217,11 +217,13 @@
    // SETTINGS GROUP
    // BATTERY module
    "battery": {
+      "bat": "BAT0",
       "interval": 30,
       "states": {
-         "good": 95,
+         "full": 100,
+         "good": 80,
          "warning": 30,
-         "critical": 20,
+         "critical": 15
       },
       "format": "{capacity}% {icon}",
       "format-charging": "{capacity}% 󰂄",
@@ -234,7 +236,16 @@
          "󰂀",
          "󰂂",
          "󰁹"
-      ],
+      ]
+   },
+   // CLAUDEBAR module
+   "custom/claudebar": {
+      "exec": "claudebar --format '{session_pct}%' --icon \"<span font='Font Awesome 7 Brands'>&#xe861;</span>\" --color-low '#b8bb26' --color-mid '#fabd2f' --color-high '#fe8019' --color-critical '#fb4934' ",
+      "return-type": "json",
+      "interval": 300,
+      "signal": 13,
+      "tooltip": true,
+      "on-click": "xdg-open https://claude.ai/settings/usage"
    },
    // LANGUAGE module
    "hyprland/language": {
@@ -303,6 +314,7 @@
       "format-on": "󰂯",
       "format-off": "BT-off",
       "format-disabled": "󰂲",
+      "format-connected": "󰂯",
       "format-connected-battery": "󰂯",
       "tooltip": true,
       // "format-alt": "{device_alias} {device_battery_percentage}% 󰂯",
@@ -321,6 +333,7 @@
          "pulseaudio",
          "backlight",
          "battery",
+         "custom/claudebar",
          "hyprland/language"
       ]
    },
@@ -346,8 +359,8 @@
       },
       "actions": {
          "on-click-right": "mode",
-         "on-scroll-up": "tz_up",
-         "on-scroll-down": "tz_down",
+        //  "on-scroll-up": "tz_up",
+        //  "on-scroll-down": "tz_down",
          "on-scroll-up": "shift_up",
          "on-scroll-down": "shift_down"
       }
@@ -381,7 +394,7 @@
       "format": "{icon}",
       "format-icons": {
          "activated": "",
-         "deactivated": "",
+         "deactivated": ""
       }
    },
    // HARDWARE modules
@@ -394,7 +407,7 @@
       "path": "/",
       "format": "󰋊",
       "tooltip": true,
-      "tooltip-format": "{path}: {used} used out of {total} ({percentage_used}%)",
+      "tooltip-format": "{path}: {used} used out of {total} ({percentage_used}%)"
    },
    "custom/hyprsunset": {
       "format": "{}",
@@ -412,14 +425,14 @@
       "format": ""
    },
    // GPU SWITCHER module
-   // "custom/gpu_switcher": {
-   //    "exec": "$HOME/.config/waybar/scripts/gpu-switcher.sh",
-   //    "return-type": "json",
-   //    "format": "{}",
-   //    "interval": 10,
-   //    "on-click": "$HOME/.config/waybar/scripts/gpu-mode-menu.sh",
-   //    "tooltip": true
-   // },
+   "custom/gpu_switcher": {
+      "exec": "$HOME/.config/waybar/scripts/gpu-switcher.sh",
+      "return-type": "json",
+      "format": "{}",
+      "interval": 60,
+      "on-click": "$HOME/.config/waybar/scripts/gpu-mode-menu.sh",
+      "tooltip": true
+   },
    // expandor of additional group from left
    "custom/expands": {
       "format": "󰌢",
@@ -449,6 +462,7 @@
       },
       "modules": [
          "custom/expands",
+        //  "network",
          "disk",
          "cpu",
          "memory",
@@ -458,6 +472,7 @@
          // "custom/gpu_switcher",
          "custom/hyprsunset",
          "idle_inhibitor",
+         "custom/vpn",
          "tray"
       ]
    }

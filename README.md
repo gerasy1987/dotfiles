@@ -1,6 +1,24 @@
 # Personal dotfiles and resources
 
-Repository with my personal config files and a list of resources to enhance your productivity and workflow.
+GNU Stow-based dotfiles for Arch Linux with Hyprland (Wayland compositor), plus curated resources for productivity.
+
+## Stow Packages
+
+Each top-level folder is a **stow package** that mirrors the target directory structure relative to `$HOME`. Running `stow <package>` symlinks its contents to `~`.
+
+| Package | Purpose |
+|---------|---------|
+| `hypr` | Hyprland compositor, hypridle, hyprpaper |
+| `fish` | Fish shell with syntax highlighting and autosuggestions |
+| `waybar` | Status bar with custom modules and scripts |
+| `foot` | Fast, minimal Wayland terminal |
+| `starship` | Cross-shell prompt |
+| `rofi` | Application launcher (dmenu replacement) |
+| `mako` | Notification daemon |
+| `btop` | System monitor |
+| `cava` | Audio visualizer |
+| `kanshi` | Automatic display configuration |
+| `claude` | Claude Code configuration (agents, rules, skills) |
 
 ## Installation
 
@@ -53,6 +71,25 @@ After you are done `stow`-ing your dotfiles make sure to **give right permission
 chmod -R +x $HOME/.config/waybar/scripts/
 ```
 
+## Claude Code Configuration
+
+The `claude/` package syncs [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI configuration to `~/.claude/`.
+
+```text
+claude/.claude/
+├── agents/        # Review agents (proofreader, slide-auditor, r-reviewer, etc.)
+├── rules/         # Global rules (plan-first workflow, quality gates)
+├── skills/        # Slash commands (/compile-latex, /translate-to-quarto, /deploy)
+└── settings.json  # Permissions and hooks
+```
+
+**Key features:**
+
+- **Agents** - Specialized subagents for code review, proofreading, and domain-specific checks
+- **Rules** - Enforce workflows like plan-before-implement and verify-before-finish
+- **Skills** - Reusable commands for LaTeX compilation, Quarto rendering, deployments
+
+**Not synced** (stay local in `~/.claude/`): `.credentials.json`, `history.jsonl`, `projects/`, cache directories.
 
 ## VS Code resources
 

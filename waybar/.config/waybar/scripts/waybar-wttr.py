@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import json
+import os
 from datetime import datetime
 
 import requests
@@ -58,8 +59,18 @@ WEATHER_CODES = {
 
 data = {}
 
+# Get weather location from environment variable (default: Nashville)
+# Set with: export WAYBAR_WEATHER_LOCATION="YourCity"
+location = os.getenv("WAYBAR_WEATHER_LOCATION", "Nashville")
 
-weather = requests.get("https://wttr.in/Nashville?format=j1").json()
+try:
+    weather = requests.get(f"https://wttr.in/{location}?format=j1", timeout=10).json()
+except Exception:
+    # Fallback when API fails or network unavailable
+    data["text"] = "N/A"
+    data["tooltip"] = "Weather unavailable"
+    print(json.dumps(data))
+    exit(0)
 
 
 def format_time(time):

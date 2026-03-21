@@ -39,7 +39,7 @@
 window#waybar {
    border-radius: 0px;
    /* background-color: transparent; */
-   background-color: rgba(40, 40, 40, 0.5);
+   background-color: rgba(40, 40, 40, 0.49);
    border-bottom: transparent;
    color: #ebdbb2;
    transition-property: background-color;
@@ -76,8 +76,6 @@ button:hover {
    /* border: 2px solid #ebdbb2; */
 }
 
-
-
 #workspaces {
    padding: 2px;
    background: rgba(40, 40, 40, 0.76);
@@ -109,11 +107,11 @@ button:hover {
    color: #fabd2f;
 }
 
-#workspaces button.focused {
-   /* border: 2px solid #ebdbb2; */
-   /* background-color: rgba(40, 40, 40, 0.76); */
-   /* box-shadow: inset 0 -2px #ebdbb2; */
-}
+/* #workspaces button.focused {
+   border: 2px solid #ebdbb2;
+   background-color: rgba(40, 40, 40, 0.76);
+   box-shadow: inset 0 -2px #ebdbb2;
+} */
 
 #workspaces button.urgent {
    color: #eb4d4b;
@@ -239,6 +237,13 @@ button:hover {
    padding-bottom: 0px;
 }
 
+#custom-claudebar {
+   background-color: transparent;
+   color: #ebdbb2;
+   padding-left: 4px;
+   padding-right: 4px;
+}
+
 #language {
    /* border-radius: 10px; */
    padding-left: 4px;
@@ -323,6 +328,9 @@ button:hover {
    color: #ebdbb2;
    padding-left: 4px;
    padding-right: 4px;
+}
+#bluetooth.connected {
+   color: #83a598;
 }
 
 
@@ -467,4 +475,29 @@ button:hover {
 #tray>.needs-attention {
    -gtk-icon-effect: highlight;
    color: #eb4d4b;
+}
+/* NETWORK */
+
+#network {
+   background: transparent;
+   margin-left: 4px;
+   margin-right: 6px;
+   color: #ebdbb2;
+}
+
+#network.disconnected {
+   color: #fb4934;
+   opacity: 0.8;
+}
+
+#custom-vpn {
+   background: transparent;
+   margin-left: 2px;
+   margin-right: 4px;
+   color: #ebdbb2;
+   opacity: 0.6;
+}
+#custom-vpn.connected {
+   color: #b8bb26;
+   opacity: 1;
 }
