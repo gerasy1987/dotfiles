@@ -1,0 +1,50 @@
+#!/usr/bin/env sh
+set -eu
+
+if ! command -v R >/dev/null 2>&1; then
+  printf '%s\n' 'R is not installed or not available on PATH.' >&2
+  exit 1
+fi
+
+if ! command -v radian >/dev/null 2>&1; then
+  if command -v pipx >/dev/null 2>&1; then
+    pipx install --force radian
+  elif command -v uv >/dev/null 2>&1; then
+    uv tool install --force radian
+  elif command -v python3 >/dev/null 2>&1; then
+    python3 -m pip install --user --upgrade radian
+  else
+    printf '%s\n' 'Skipping radian install: pipx, uv, and python3 are unavailable.' >&2
+  fi
+fi
+
+R --vanilla <<'EOF'
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+
+packages <- c(
+  "languageserver",
+  "httpgd",
+  "lintr",
+  "styler",
+  "jsonlite",
+  "rmarkdown",
+  "knitr",
+  "renv",
+  "IRkernel"
+)
+
+missing <- packages[!vapply(packages, requireNamespace, logical(1), quietly = TRUE)]
+
+if (length(missing) > 0) {
+  install.packages(missing)
+}
+
+if (requireNamespace("IRkernel", quietly = TRUE)) {
+  tryCatch(
+    IRkernel::installspec(user = TRUE),
+    error = function(error) {
+      message("Skipping IRkernel::installspec(): ", conditionMessage(error))
+    }
+  )
+}
+EOF

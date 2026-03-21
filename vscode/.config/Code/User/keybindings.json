@@ -1,0 +1,18 @@
+[
+  {
+    "key": "alt+-",
+    "command": "type",
+    "args": {
+      "text": " <- "
+    },
+    "when": "editorTextFocus && (editorLangId == 'r' || editorLangId == 'rmd' || editorLangId == 'quarto')"
+  },
+  {
+    "key": "ctrl+shift+m",
+    "command": "type",
+    "args": {
+      "text": " |> "
+    },
+    "when": "editorTextFocus && (editorLangId == 'r' || editorLangId == 'rmd' || editorLangId == 'quarto')"
+  }
+]
