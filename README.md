@@ -1,6 +1,6 @@
 # Personal dotfiles and resources
 
-GNU Stow-based dotfiles for Arch Linux with Hyprland (Wayland compositor), plus curated resources for productivity.
+GNU Stow-based dotfiles for Linux (Arch + Hyprland) and macOS, plus curated resources for productivity.
 
 ## Stow Packages
 
@@ -109,18 +109,35 @@ claude/.claude/
 
 - **[Quarto in VS Code](https://quarto.org/docs/tools/vscode.html)** is as good as Quarto in RStudio with full support for chunk controls and visual editor.
 
-### Opinionated R Setup
+### VS Code Setup (Cross-Platform)
 
-This repo now includes an R-focused VS Code package under `vscode/` plus a global `.Rprofile` under `r/`.
+VS Code stores user settings in different locations per OS:
 
-After stowing those packages, finish the setup with:
+- **Linux:** `~/.config/Code/User/`
+- **macOS:** `~/Library/Application Support/Code/User/`
+
+The canonical settings live in `vscode/.config/Code/User/` (the Linux path). After stowing, run the install script to symlink them to the correct OS-specific location:
 
 ```sh
-~/.local/bin/vscode-r-extensions
-~/.local/bin/vscode-r-bootstrap
+stow vscode r
+vscode-install          # symlinks settings.json & keybindings.json to the right OS path
+vscode-r-extensions     # installs R-related VS Code extensions
+vscode-r-bootstrap      # installs R packages (languageserver, httpgd, etc.) and radian
 ```
 
-What this enables:
+**Prerequisites by OS:**
+
+```sh
+# Arch Linux
+sudo pacman -S r jupyter-notebook python-pipx
+
+# macOS (Homebrew)
+brew install r jupyterlab pipx
+```
+
+### Opinionated R Setup
+
+The `vscode` and `r` packages together provide a full R development environment:
 
 - `radian` as the preferred R terminal inside VS Code, with fallback to plain `R`
 - `languageserver` for completion, hover, rename, diagnostics, and formatting
@@ -129,14 +146,7 @@ What this enables:
 - `IRkernel` for Jupyter-backed R notebooks in VS Code
 - Quarto and R Markdown formatting-on-save plus chunk CodeLens
 - Global `.Rprofile` hooks so self-managed VS Code R sessions attach cleanly
-
-Recommended system packages on Arch before running the bootstrap script:
-
-```sh
-sudo pacman -S r jupyter-notebook python-pipx
-```
-
-The VS Code settings target `~/.config/Code/User`. If you use VSCodium or Code OSS instead, copy the same files to the matching user settings directory or tell me and I can add sibling packages for those targets too.
+- Cross-platform R terminal and path settings (`r.rterm.mac`/`r.rterm.linux`)
 
 - A list of useful VS Code packages:
 

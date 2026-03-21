@@ -1,12 +1,85 @@
 {
-    "security.workspace.trust.untrustedFiles": "open",
-    "workbench.sideBar.location": "right",
-    "workbench.colorTheme": "Gruvbox Dark Medium",
-    "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', 'monospace', monospace",
-    "editor.unicodeHighlight.includeStrings": false,
-    "security.workspace.trust.enabled": false,
-    "editor.fontSize": 15,
-    "editor.fontLigatures": true,
-    "github.copilot.nextEditSuggestions.enabled": true,
-    "chat.viewSessions.orientation": "stacked"
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.workspace.trust.enabled": false,
+
+  "workbench.colorTheme": "Gruvbox ish Dark Medium",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.productIconTheme": "material-product-icons",
+  "workbench.sideBar.location": "right",
+  "workbench.colorCustomizations": {
+    "terminal.background": "#00000000"
+  },
+  "workbench.settings.applyToAllProfiles": [
+    "workbench.colorCustomizations"
+  ],
+
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
+  "editor.fontSize": 15,
+  "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09'",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.formatOnType": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.rulers": [80, 100],
+  "editor.minimap.autohide": "mouseover",
+  "editor.inlineSuggest.enabled": false,
+  "editor.unicodeHighlight.includeStrings": false,
+
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontLigatures.enabled": true,
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.defaultProfile.linux": "fish",
+  "terminal.external.osxExec": "fish",
+  "terminal.external.linuxExec": "fish",
+
+  "r.bracketedPaste": true,
+  "r.plot.useHttpgd": true,
+  "r.sessionWatcher": true,
+  "r.alwaysUseActiveTerminal": true,
+  "r.lsp.debug": false,
+  "r.rterm.option": [],
+  "r.rterm.mac": "/Users/gerasy/.local/bin/vscode-rterm",
+  "r.rterm.linux": "/home/gerasy/.local/bin/vscode-rterm",
+  "r.rpath.mac": "/usr/local/bin/R",
+  "r.rpath.linux": "/usr/bin/R",
+
+  "python.terminal.shellIntegration.enabled": true,
+  "code-runner.runInTerminal": true,
+  "git.autofetch": true,
+  "explorer.confirmDelete": false,
+
+  "github.copilot.enable": {
+    "quarto": true
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+
+  "editor.defaultFormatter": "quarto.quarto",
+  "[quarto]": {
+    "editor.defaultFormatter": "quarto.quarto"
+  },
+  "[r]": {
+    "editor.formatOnSave": false
+  },
+  "[rmd]": {
+    "editor.defaultFormatter": "REditorSupport.r"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "[bibtex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "notebook.defaultFormatter": "Posit.air-vscode",
+
+  "claudeCode.preferredLocation": "panel",
+  "chat.viewSessions.orientation": "stacked"
 }
