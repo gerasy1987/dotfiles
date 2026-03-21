@@ -1,4 +1,5 @@
 .archive/
+fish/.config/fish/fish_variables
 fish/.config/fish/conf.d/secrets.fish
 btop/.config/btop/btop.log
 */quality_reports/
