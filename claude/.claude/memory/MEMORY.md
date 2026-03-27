@@ -12,3 +12,4 @@
 - [feedback_use-declaredesign.md](feedback_use-declaredesign.md) — Use DeclareDesign for Monte Carlo simulations, not hand-rolled loops
 - [feedback_no-throwaway-objects.md](feedback_no-throwaway-objects.md) — Inline single-use expressions; prefer longer pipelines over one-off variables
 - [feedback_use-future-apply.md](feedback_use-future-apply.md) — Use future/future.apply for parallelization, not pbapply or parallel
+- [feedback_verify-before-handoff.md](feedback_verify-before-handoff.md) — Self-test simple/system fixes before handoff; don't for large scientific analysis changes
