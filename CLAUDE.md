@@ -31,6 +31,8 @@ stow -D fish             # Uninstall a package
 stow -R fish             # Restow (uninstall + install)
 ```
 
+**Important:** Stow symlinks individual files, not directories. When you **add a new file** to an already-stowed package, run `stow -R <package>` to create the missing symlink — otherwise the new file lives only in the dotfiles repo and is not active. Edits to existing files are picked up automatically (the symlink already points to them).
+
 ## Key Applications
 
 | Package | Purpose |
@@ -91,6 +93,7 @@ Slash commands invoked with `/skill-name`:
 | `/proofread` | Run proofreader agent |
 | `/slide-excellence` | Full slide quality review |
 | `/deploy` | Sync to docs/ for GitHub Pages |
+| `/prompt-refine` | Audit and improve an existing prompt |
 
 ### Excluded from Git
 
