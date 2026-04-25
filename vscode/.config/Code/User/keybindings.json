@@ -1,0 +1,46 @@
+[
+  {
+    "key": "alt+-",
+    "command": "type",
+    "args": { "text": " <- " },
+    "when": "editorTextFocus && (editorLangId == 'r' || editorLangId == 'rmd' || editorLangId == 'quarto')"
+  },
+  {
+    "key": "ctrl+shift+m",
+    "command": "type",
+    "args": { "text": " |> " },
+    "when": "editorTextFocus && (editorLangId == 'r' || editorLangId == 'rmd' || editorLangId == 'quarto')"
+  },
+  {
+    "key": "shift+cmd+m",
+    "command": "type",
+    "args": { "text": " |> " },
+    "when": "editorTextFocus && editorLangId == 'r' || editorTextFocus && quarto.document.languageId == 'r'"
+  },
+  {
+    "key": "f1",
+    "command": "r.helpPanel.openForSelection",
+    "args": { "type": "function", "position": "cursor" },
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+space",
+    "command": "editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+  },
+  {
+    "key": "alt+escape",
+    "command": "-editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "quarto.insertCodeCell",
+    "when": "editorTextFocus && !findInputFocussed && !replaceInputFocussed && editorLangId == 'quarto'"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "-quarto.insertCodeCell",
+    "when": "editorTextFocus && !findInputFocussed && !replaceInputFocussed && editorLangId == 'quarto'"
+  }
+]

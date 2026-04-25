@@ -11,7 +11,7 @@ if pgrep hyprsunset >/dev/null; then
    fi
 else
    if [ "$1" = "toggle" ]; then
-      hyprsunset -t 5000 -g 90% &
+      hyprsunset -t 4000 -g 90% &
       notify-send -t 700 "Hyprsunset started"
       echo "󱩌"
       pkill -SIGRTMIN+10 waybar

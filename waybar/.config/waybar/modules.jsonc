@@ -469,7 +469,7 @@
          "temperature",
          "custom/cliphist",
          "custom/keybindings",
-         "custom/gpu_switcher",
+         // "custom/gpu_switcher",
          "custom/hyprsunset",
          "idle_inhibitor",
          "custom/vpn",

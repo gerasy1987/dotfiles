@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+set -eu
+
+code_bin=''
+
+for candidate in code codium code-oss cursor; do
+  if command -v "$candidate" >/dev/null 2>&1; then
+    code_bin="$candidate"
+    break
+  fi
+done
+
+if [ -z "$code_bin" ]; then
+  printf '%s\n' 'Could not find a VS Code CLI (code, codium, code-oss, or cursor).' >&2
+  exit 1
+fi
+
+for extension in \
+  REditorSupport.r \
+  quarto.quarto \
+  ms-toolsai.jupyter \
+  rdebugger.r-debugger
+do
+  "$code_bin" --install-extension "$extension" --force
+done

@@ -1,6 +1,6 @@
 # Personal dotfiles and resources
 
-GNU Stow-based dotfiles for Arch Linux with Hyprland (Wayland compositor), plus curated resources for productivity.
+GNU Stow-based dotfiles for Linux (Arch + Hyprland) and macOS, plus curated resources for productivity.
 
 ## Stow Packages
 
@@ -19,6 +19,8 @@ Each top-level folder is a **stow package** that mirrors the target directory st
 | `cava` | Audio visualizer |
 | `kanshi` | Automatic display configuration |
 | `claude` | Claude Code configuration (agents, rules, skills) |
+| `vscode` | VS Code user settings, keybindings, and helper scripts |
+| `r` | Global R profile for VS Code session watcher and terminal width |
 
 ## Installation
 
@@ -61,6 +63,8 @@ To copy these dotfiles, I suggest to use [GNU Stow](https://www.gnu.org/software
    stow fish
    stow foot
    stow starship
+  stow vscode
+  stow r
    ```
    
    This will symlink the config files into your `$HOME` directory with correct relative paths.
@@ -104,6 +108,45 @@ claude/.claude/
 - **[Cursor](https://www.cursor.com)** is a VS Code wrapper (and replacement) designed to improve your coding efficiency with AI-powered code suggestions and completions.
 
 - **[Quarto in VS Code](https://quarto.org/docs/tools/vscode.html)** is as good as Quarto in RStudio with full support for chunk controls and visual editor.
+
+### VS Code Setup (Cross-Platform)
+
+VS Code stores user settings in different locations per OS:
+
+- **Linux:** `~/.config/Code/User/`
+- **macOS:** `~/Library/Application Support/Code/User/`
+
+The canonical settings live in `vscode/.config/Code/User/` (the Linux path). After stowing, run the install script to symlink them to the correct OS-specific location:
+
+```sh
+stow vscode r
+vscode-install          # symlinks settings.json & keybindings.json to the right OS path
+vscode-r-extensions     # installs R-related VS Code extensions
+vscode-r-bootstrap      # installs R packages (languageserver, httpgd, etc.) and radian
+```
+
+**Prerequisites by OS:**
+
+```sh
+# Arch Linux
+sudo pacman -S r jupyter-notebook python-pipx
+
+# macOS (Homebrew)
+brew install r jupyterlab pipx
+```
+
+### Opinionated R Setup
+
+The `vscode` and `r` packages together provide a full R development environment:
+
+- `radian` as the preferred R terminal inside VS Code, with fallback to plain `R`
+- `languageserver` for completion, hover, rename, diagnostics, and formatting
+- `httpgd` for the VS Code plot viewer
+- `lintr` and `styler` for diagnostics and formatting
+- `IRkernel` for Jupyter-backed R notebooks in VS Code
+- Quarto and R Markdown formatting-on-save plus chunk CodeLens
+- Global `.Rprofile` hooks so self-managed VS Code R sessions attach cleanly
+- Cross-platform R terminal and path settings (`r.rterm.mac`/`r.rterm.linux`)
 
 - A list of useful VS Code packages:
 
