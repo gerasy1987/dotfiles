@@ -79,5 +79,6 @@
       }
     }
   },
-  "theme": "dark-ansi"
+  "theme": "dark-ansi",
+  "effortLevel": "max"
 }
