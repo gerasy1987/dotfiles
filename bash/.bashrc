@@ -85,3 +85,7 @@ _open_files_for_editing() {
 # alias pacdiff=eos-pacdiff
 ################################################################################
 
+
+. "$HOME/.local/share/../bin/env"
+
+alias claude-mem='/home/zhora/.bun/bin/bun "/home/zhora/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'

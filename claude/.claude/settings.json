@@ -68,5 +68,16 @@
       }
     ]
   },
-  "effortLevel": "max"
+  "enabledPlugins": {
+    "claude-mem@thedotmack": true
+  },
+  "extraKnownMarketplaces": {
+    "thedotmack": {
+      "source": {
+        "source": "github",
+        "repo": "thedotmack/claude-mem"
+      }
+    }
+  },
+  "theme": "dark-ansi"
 }
