@@ -1,6 +1,6 @@
 ---
 name: quarto-critic
-description: Adversarial QA agent that compares Quarto HTML against Beamer PDF benchmark. Produces harsh, actionable criticism. Does NOT edit files — read-only analysis only.
+description: Adversarial QA — compares Quarto HTML to Beamer PDF benchmark. Read-only, harsh actionable criticism.
 tools: Read, Grep, Glob
 model: opus
 ---

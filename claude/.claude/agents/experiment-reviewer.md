@@ -1,6 +1,6 @@
 ---
 name: experiment-reviewer
-description: Methodological reviewer for experimental studies (RCTs, field experiments). Checks randomization, estimation, multiple testing, pre-registration compliance, and robustness. Use after analysis code is drafted or before submitting.
+description: Methodological review of RCTs/field experiments — randomization, estimation, multiple testing, pre-registration, robustness.
 tools: Read, Grep, Glob
 ---
 

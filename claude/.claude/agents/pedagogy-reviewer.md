@@ -1,6 +1,6 @@
 ---
 name: pedagogy-reviewer
-description: Holistic pedagogical review for academic slides. Checks narrative arc, prerequisite assumptions, worked examples, notation clarity, and deck-level pacing. Use after content is drafted.
+description: Pedagogical review of academic slides — narrative arc, prerequisites, examples, notation clarity, pacing.
 tools: Read, Grep, Glob
 ---
 

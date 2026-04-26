@@ -1,6 +1,6 @@
 ---
 name: quarto-fixer
-description: Implements fixes from the quarto-critic agent. Applies changes to QMD files, re-renders slides, and verifies fixes. Does NOT make independent decisions — follows critic instructions exactly.
+description: Implements quarto-critic's fixes; edits QMD, re-renders, verifies. Follows critic exactly, no independent decisions.
 tools: Read, Edit, Write, Bash, Grep, Glob
 model: sonnet
 ---

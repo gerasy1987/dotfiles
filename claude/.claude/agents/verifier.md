@@ -1,6 +1,6 @@
 ---
 name: verifier
-description: End-to-end verification agent. Checks that documents compile, render, and display correctly. Use proactively before committing or creating PRs.
+description: End-to-end verification — documents compile, render, display correctly. Use before commit/PR.
 tools: Read, Grep, Glob, Bash
 model: inherit
 ---
