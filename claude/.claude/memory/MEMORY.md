@@ -12,3 +12,6 @@
 - [feedback_use-declaredesign.md](feedback_use-declaredesign.md) — Use DeclareDesign for Monte Carlo simulations, not hand-rolled loops
 - [feedback_no-throwaway-objects.md](feedback_no-throwaway-objects.md) — Inline single-use expressions; prefer longer pipelines over one-off variables
 - [feedback_use-future-apply.md](feedback_use-future-apply.md) — Use future/future.apply for parallelization, not pbapply or parallel
+- [feedback_check-sources.md](feedback_check-sources.md) — Always verify claims against original sources before answering; don't rely on memory
+- [feedback_overleaf_compile.md](feedback_overleaf_compile.md) — Never compile LaTeX files that live in or are symlinked to the Dropbox/Apps/Overleaf folder; Overleaf builds them automatically
+- [feedback_review_priorities.md](feedback_review_priorities.md) — For all academic reviews (chapters AND journal referee reports): lead with substance; keep methods nitpicks low-priority unless explicitly asked

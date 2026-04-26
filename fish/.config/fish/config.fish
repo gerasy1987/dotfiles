@@ -14,3 +14,7 @@ function fish_greeting
    # sh ~/Downloads/dotfiles/colorscheme.sh
    #  fortune | cowsay | lolcat -g d79921:689d6a
 end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
