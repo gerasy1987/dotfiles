@@ -60,9 +60,9 @@
       {
         "hooks": [
           {
-            "type": "prompt",
-            "prompt": "Check ONLY the tool calls in this turn (not the full history). Did Claude edit or write any .tex, .qmd, .R, or .svg file AND then fail to compile/render it? If yes: {\"ok\": false, \"reason\": \"Verify: compile/render the modified files.\"}. If no such files were touched, or verification was done, or the task was informational: {\"ok\": true}.",
-            "timeout": 15
+            "type": "command",
+            "command": "~/.claude/hooks/post-edit-verify.sh",
+            "timeout": 5000
           }
         ]
       }
@@ -79,5 +79,6 @@
       }
     }
   },
+  "theme": "dark-ansi",
   "effortLevel": "max"
 }

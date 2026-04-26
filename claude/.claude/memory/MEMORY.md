@@ -15,3 +15,5 @@
 - [feedback_check-sources.md](feedback_check-sources.md) — Always verify claims against original sources before answering; don't rely on memory
 - [feedback_overleaf_compile.md](feedback_overleaf_compile.md) — Never compile LaTeX files that live in or are symlinked to the Dropbox/Apps/Overleaf folder; Overleaf builds them automatically
 - [feedback_review_priorities.md](feedback_review_priorities.md) — For all academic reviews (chapters AND journal referee reports): lead with substance; keep methods nitpicks low-priority unless explicitly asked
+- [feedback_verify-before-handoff.md](feedback_verify-before-handoff.md) — Self-test simple/system fixes before handoff; don't for large scientific analysis changes
+- [feedback_universal-over-per-tool.md](feedback_universal-over-per-tool.md) — Lead with universal/scalable config solutions before per-instance setup
