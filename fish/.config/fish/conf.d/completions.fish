@@ -22,12 +22,16 @@ if type -q register-python-argcomplete
 end
 
 # --- Cobra-based Go tools ------------------------------------------------
-# Pattern: `<cmd> completion fish | source`
-# Examples: gh, kubectl, helm, docker, hugo, glab
-for cmd in gh kubectl helm
+# Most Cobra CLIs use: `<cmd> completion fish | source`
+for cmd in kubectl helm
     if type -q $cmd
         $cmd completion fish 2>/dev/null | source
     end
+end
+
+# GitHub CLI uses a different flag syntax.
+if type -q gh
+    gh completion -s fish 2>/dev/null | source
 end
 
 # --- Other patterns to remember ------------------------------------------

@@ -34,7 +34,7 @@ echo ""
 echo "=== session-env snapshots (keeping 10 most recent) ==="
 ls -1t "$CLAUDE_HOME/session-env" 2>/dev/null | tail -n +11 | while read -r f; do
   echo "  $CLAUDE_HOME/session-env/$f"
-  run rm -f "$CLAUDE_HOME/session-env/$f"
+  run rm -rf "$CLAUDE_HOME/session-env/$f"
 done
 
 echo ""

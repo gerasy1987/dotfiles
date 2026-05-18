@@ -81,5 +81,23 @@
   "notebook.defaultFormatter": "Posit.air-vscode",
 
   "claudeCode.preferredLocation": "panel",
-  "chat.viewSessions.orientation": "stacked"
+  "chat.viewSessions.orientation": "stacked",
+  "chat.tools.urls.autoApprove": {
+    "https://code.visualstudio.com": true,
+    "https://github.com/microsoft/vscode/wiki/*": true,
+    "https://dataverse.harvard.edu/dataverse/the_review": true,
+    "https://dataverse.harvard.edu/dataverse": true,
+    "https://dataverse.harvard.edu": true,
+    "https://*.harvard.edu": true,
+    "https://www.openicpsr.org/openicpsr": true,
+    "https://www.openicpsr.org": true,
+    "https://*.openicpsr.org": true,
+    "https://osf.io": true,
+    "https://www.cambridge.org/core/journals/american-journal-of-political-science": true,
+    "https://www.cambridge.org/core/journals": true,
+    "https://www.cambridge.org/core": true,
+    "https://www.cambridge.org": true,
+    "https://*.cambridge.org": true
+  },
+  "svg.preview.mode": "svg"
 }
