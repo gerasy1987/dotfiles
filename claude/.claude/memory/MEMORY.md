@@ -14,3 +14,5 @@
 - [feedback_use-future-apply.md](feedback_use-future-apply.md) — Use future/future.apply for parallelization, not pbapply or parallel
 - [feedback_verify-before-handoff.md](feedback_verify-before-handoff.md) — Self-test simple/system fixes before handoff; don't for large scientific analysis changes
 - [feedback_universal-over-per-tool.md](feedback_universal-over-per-tool.md) — Lead with universal/scalable config solutions before per-instance setup
+- [feedback_latex-equiv-over-coloneq.md](feedback_latex-equiv-over-coloneq.md) — Use `\equiv` not `:=` for math definitions
+- [feedback_pandoc-text-mode-gotchas.md](feedback_pandoc-text-mode-gotchas.md) — Brace-escaping (`100{,}000`) and italics-spanning-display-math traps in QMD→PDF
