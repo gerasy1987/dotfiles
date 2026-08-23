@@ -50,6 +50,12 @@ Use all-caps section headers with trailing dashes to ~75 characters:
 # EXPORT ------------------------------------------------------------------
 ```
 
+Section headers must use stable semantic names for navigation. Do not add decorative or chronological banners that describe when or why content was added; normal file ordering and Git history carry that information.
+
+### Comment Density
+
+Comment the non-obvious *why*, not the *what* — the reader is fluent and does not need line-by-line narration. Keep the header to the structured fields above; do **not** add essay-style HOW-TO-RUN / ASSUMPTIONS / VERIFICATION prose. Inline, comment only a subtle decision, a magic value (e.g. `999 = missing`), a guard's rationale, or a workaround. See [`comment-brevity.md`](comment-brevity.md) for the cross-language statement.
+
 ## 2. Console Output Policy
 
 **Scripts are NOT notebooks.**
