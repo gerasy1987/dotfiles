@@ -87,9 +87,13 @@ Produce three sections in this order:
 
 1. **Primary finding** — one sentence, the most impactful change.
 2. **Changes** — bullet list, each entry: `<change> — <why>`.
-3. **Refined prompt** — fenced code block, ready to paste.
+3. **Refined prompt** — fenced code block, ready to paste. One physical line per paragraph and per list item — no hard wrapping (see "Line wrapping in prompt output" below).
 
 For reusable prompts (agent definitions, skills, rules), add or increment a version header inside the refined prompt.
+
+## Line wrapping in prompt output
+
+Never hard-wrap prose. Each paragraph and each list item is **one physical line**, however long; let the editor soft-wrap. Hard-wrapped text (a paragraph split across 5–6 lines at ~80 characters) is read by Markdown viewers and by the user as separate lines, and it breaks copy-paste into web forms. Only code blocks, tables, and YAML keep their own line structure.
 
 ## Important
 
@@ -98,3 +102,4 @@ For reusable prompts (agent definitions, skills, rules), add or increment a vers
 - If the prompt is already strong, say so and suggest only minor tweaks (or none).
 - Do NOT execute the refined prompt. Output only.
 - Substance gaps take priority over structural gaps.
+- When writing the refined prompt to a file, apply the same no-hard-wrap rule to the file.
