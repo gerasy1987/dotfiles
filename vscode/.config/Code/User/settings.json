@@ -2,7 +2,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "security.workspace.trust.enabled": false,
 
-  "workbench.colorTheme": "Gruvbox ish Dark Medium",
+  "workbench.colorTheme": "Monokai Pro",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.productIconTheme": "material-product-icons",
   "workbench.sideBar.location": "right",
@@ -24,8 +24,6 @@
   "editor.minimap.autohide": "mouseover",
   "editor.inlineSuggest.enabled": false,
   "editor.unicodeHighlight.includeStrings": false,
-
-  "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.defaultProfile.linux": "fish",
@@ -99,5 +97,8 @@
     "https://www.cambridge.org": true,
     "https://*.cambridge.org": true
   },
-  "svg.preview.mode": "svg"
+  "svg.preview.mode": "svg",
+  "extensions.supportAgentsWindow": {
+    "monokai.theme-monokai-pro-vscode": true
+  }
 }
