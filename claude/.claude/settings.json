@@ -43,6 +43,7 @@
       "Bash(pdftotext *)"
     ]
   },
+  "model": "claude-fable-5",
   "hooks": {
     "PreToolUse": [
       {
@@ -69,7 +70,7 @@
     ]
   },
   "enabledPlugins": {
-    "claude-mem@thedotmack": true
+    "claude-mem@thedotmack": false
   },
   "extraKnownMarketplaces": {
     "thedotmack": {
@@ -79,6 +80,7 @@
       }
     }
   },
-  "theme": "dark-ansi",
-  "effortLevel": "max"
+  "effortLevel": "xhigh",
+  "tui": "fullscreen",
+  "theme": "dark-ansi"
 }
