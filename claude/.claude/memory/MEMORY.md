@@ -19,3 +19,13 @@
 - [feedback_universal-over-per-tool.md](feedback_universal-over-per-tool.md) — Lead with universal/scalable config solutions before per-instance setup
 - [feedback_latex-equiv-over-coloneq.md](feedback_latex-equiv-over-coloneq.md) — Use `\equiv` not `:=` for math definitions
 - [feedback_pandoc-text-mode-gotchas.md](feedback_pandoc-text-mode-gotchas.md) — Brace-escaping (`100{,}000`) and italics-spanning-display-math traps in QMD→PDF
+- [feedback_macos-shell-quirks.md](feedback_macos-shell-quirks.md) — grep is ugrep (regex complexity limits → use /usr/bin/grep), fish expands --include globs (quote them), BSD cat has no -A
+- [feedback_lean-pap-disclosure.md](feedback_lean-pap-disclosure.md) — PAP deviations: disclose each once, factually; no inventories or "not pre-registered" tags; never justify test choice by results; verify the OSF form + PAP PDF and scan appendix tables/figures before any registration wording; don't restate a global deviation per analysis
+- [feedback_commit-message-style.md](feedback_commit-message-style.md) — Commits: one lowercase subject line in his wording, no body, trailer accepted, stage only the named files
+- [feedback_enhance-not-rewrite.md](feedback_enhance-not-rewrite.md) — Extend existing functions with a minimal diff in the file's own style, one opt-in argument with companion defaults, and a drop-in check that the option-off output is unchanged
+- [feedback_questions-want-mechanism.md](feedback_questions-want-mechanism.md) — "Is there a way…?" questions want the mechanism and levers explained with a recommendation, not a fix applied; he picks the numbers himself
+- [feedback_r-framework-only.md](feedback_r-framework-only.md) — Only one R since 2026-09-08: CRAN framework build (/usr/local/bin/Rscript), Homebrew R removed; install packages with plain Rscript, never brew install r
+
+## Reference
+
+- [reference_quarto-html-figure-check.md](reference_quarto-html-figure-check.md) — Inspect embed-resources Quarto HTML renders: extract base64 figures by fig id (`role="img"` precedes `src`), dump kable tables; wrap star/quote cells in backticks
