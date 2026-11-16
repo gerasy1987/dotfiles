@@ -43,6 +43,7 @@
       "Bash(pdftotext *)"
     ]
   },
+  "model": "fable[1m]",
   "hooks": {
     "PreToolUse": [
       {
@@ -68,5 +69,11 @@
       }
     ]
   },
-  "effortLevel": "max"
+  "modelSettings": {
+    "claude-fable-5-1": {
+      "effortLevel": "high"
+    }
+  },
+  "tui": "fullscreen",
+  "theme": "dark"
 }

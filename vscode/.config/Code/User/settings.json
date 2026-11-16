@@ -37,9 +37,8 @@
   "r.sessionWatcher": true,
   "r.alwaysUseActiveTerminal": true,
   "r.lsp.debug": false,
-  "r.rterm.option": [],
-  "r.rterm.mac": "/Users/gerasy/.local/bin/vscode-rterm",
-  "r.rterm.linux": "/home/gerasy/.local/bin/vscode-rterm",
+  "r.consolePath": "${userHome}/.local/bin/vscode-rterm",
+  "r.consoleArgs": [],
   "r.rpath.mac": "/usr/local/bin/R",
   "r.rpath.linux": "/usr/bin/R",
 
@@ -80,6 +79,7 @@
   },
   "notebook.defaultFormatter": "Posit.air-vscode",
 
-  "claudeCode.preferredLocation": "panel",
-  "chat.viewSessions.orientation": "stacked"
+  "claudeCode.preferredLocation": "sidebar",
+  "chat.viewSessions.orientation": "stacked",
+  "claudeCode.hideOnboarding": true
 }

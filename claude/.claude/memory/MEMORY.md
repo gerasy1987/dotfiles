@@ -12,3 +12,7 @@
 - [feedback_use-declaredesign.md](feedback_use-declaredesign.md) — Use DeclareDesign for Monte Carlo simulations, not hand-rolled loops
 - [feedback_no-throwaway-objects.md](feedback_no-throwaway-objects.md) — Inline single-use expressions; prefer longer pipelines over one-off variables
 - [feedback_use-future-apply.md](feedback_use-future-apply.md) — Use future/future.apply for parallelization, not pbapply or parallel
+
+## Reference
+
+- [reference_vscode-extension-shell-env.md](reference_vscode-extension-shell-env.md) — Shells from the Claude Code VS Code extension carry ELECTRON_RUN_AS_NODE=1; unset it before launching Electron apps; verify env by spawning a process, not via /proc/<pid>/environ
