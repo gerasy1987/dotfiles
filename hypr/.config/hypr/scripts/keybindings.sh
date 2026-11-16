@@ -6,33 +6,16 @@
 # |_|\_\___|\__, |_.__/|_|_| |_|\__,_|_|_| |_|\__, |___/
 #           |___/                             |___/
 #
-# -----------------------------------------------------
-# Get keybindings location based on variation
-# -----------------------------------------------------
-config_file="$HOME/.config/hypr/conf/keybindings.conf"
+# Keybinding cheat sheet. Reads the live binds from Hyprland; the text comes from the
+# desc field of each hl.bind() in conf/keybindings.lua, so no config parsing is needed.
 
-# -----------------------------------------------------
-# Path to keybindings config file
-# -----------------------------------------------------
-echo "Reading from: $config_file"
+keybinds=$(hyprctl binds -j | jq -r '
+  def mods:
+    [ (if ((.modmask / 64) | floor) % 2 == 1 then "SUPER" else empty end),
+      (if ((.modmask / 4)  | floor) % 2 == 1 then "CTRL"  else empty end),
+      (if ((.modmask / 8)  | floor) % 2 == 1 then "ALT"   else empty end),
+      (if  .modmask % 2 == 1                  then "SHIFT" else empty end) ];
+  .[] | select(.has_description)
+      | ((mods + [.key]) | join(" + ")) + ": " + .description')
 
-keybinds=$(awk '
-   $1 ~ /^bind(m|el)?/ {
-      line = $0
-      gsub(/\$mainMod/, "SUPER", line)
-      sub(/^bind(m|el)?[[:space:]]*=[[:space:]]*/, "", line)
-      split(line, arr, /,[[:space:]]*/)
-      key1 = arr[1]
-      key2 = arr[2]
-      # Extract comment after #
-      comment = ""
-      if (match(line, /#[[:space:]]*(.*)$/, arr)) {
-         comment = arr[1]
-         gsub(/^[[:space:]]+|[[:space:]]+$/, "", comment)
-      }
-      print key1 " " key2 ": " comment
-   }
-' "$config_file")
-
-sleep 0.2
-rofi -dmenu -i -replace -p "keybinds" -config $HOME/.config/rofi/config_wide.rasi <<<"$keybinds"
+rofi -dmenu -i -replace -p "keybinds" -config "$HOME/.config/rofi/config_wide.rasi" <<<"$keybinds"
