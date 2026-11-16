@@ -217,7 +217,8 @@
    // SETTINGS GROUP
    // BATTERY module
    "battery": {
-      "bat": "BAT0",
+      // "bat": "BAT0", // Arch laptop only (main branch). On the Asahi MacBook the battery is
+      // macsmc-battery and the adapter macsmc-ac; leaving "bat" unset lets waybar auto-detect both.
       "interval": 30,
       "states": {
          "full": 100,

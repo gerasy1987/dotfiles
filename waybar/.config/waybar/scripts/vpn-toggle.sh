@@ -12,17 +12,21 @@ fi
 active_vpns=$(nmcli -t -f NAME,TYPE connection show --active | grep -E ':vpn$|:wireguard$' | cut -d: -f1)
 
 # Build rofi menu with status icons
+# Active rows are also collected for rofi's -a flag, which highlights them
 menu=""
-for vpn in "${all_vpns[@]}"; do
+active_rows=""
+for i in "${!all_vpns[@]}"; do
+   vpn="${all_vpns[$i]}"
    if echo "$active_vpns" | grep -qxF "$vpn"; then
-      menu+="󰌾 $vpn\n"
+      menu+="󰌾 $vpn (connected)\n"
+      active_rows+="${active_rows:+,}$i"
    else
       menu+="󰌿 $vpn\n"
    fi
 done
 
 # Show rofi menu, get selected index
-chosen_idx=$(echo -e "$menu" | rofi -dmenu -i -p "VPN" -format i -theme-str 'listview { lines: 5; columns: 1; } window { width: 350px; }')
+chosen_idx=$(echo -e "$menu" | rofi -dmenu -i -p "VPN" -format i ${active_rows:+-a "$active_rows"} -theme-str 'listview { lines: 5; columns: 1; } window { width: 350px; }')
 
 [ -z "$chosen_idx" ] && exit 0
 
